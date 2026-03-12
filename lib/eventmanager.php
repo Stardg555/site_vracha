@@ -13,5 +13,6 @@ class EventManager
         $eventManager->registerEventHandler('iblock', 'OnAfterIBlockElementAdd', 'vit.doctor', '\\Vit\\Doctor\\Events', 'onAfterReviewFormSend');
         $eventManager->registerEventHandler('iblock', 'OnAfterIBlockElementAdd', 'vit.doctor', '\\Vit\\Doctor\\Events', 'onAfterDoctorHomeFormSend');
         $eventManager->registerEventHandler('main', 'OnEpilog', 'vit.doctor', '\\Vit\\Doctor\\Events', 'page404');
+        $eventManager->registerEventHandler('iblock', 'OnIBlockPropertyBuildList', 'vit.doctor', '\\Vit\\Doctor\\UserType\\WorkTime', 'GetUserTypeDescription');
     }
 }
