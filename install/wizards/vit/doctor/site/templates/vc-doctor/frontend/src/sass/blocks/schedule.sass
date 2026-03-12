@@ -1,0 +1,191 @@
+.vc-schedule
+    width: 400px
+    @media(max-width: 1023px)
+        width: 100%
+        padding-top: 24px
+        margin-top: 24px
+        border-top: 1px solid #e3e9ef
+    &__select
+        position: relative
+        border-radius: 6px
+        border: 1px solid #c6d3de
+        height: 40px
+        padding: 0 16px 0 12px
+        display: flex
+        align-items: center
+        cursor: pointer
+        transition: 0.3s
+        &--open
+            border-color: var(--vc-primary)
+    &__select-icon
+        flex-shrink: 0
+        margin-right: 8px
+        svg
+            display: block
+    &__select-title
+        +fprop(13, 14, 414, 1300)
+        font-style: normal
+        font-weight: 500
+        line-height: 1
+        overflow: hidden
+        color: #4c5053
+    &__select-arrow
+        flex-shrink: 0
+        margin-left: auto
+        svg
+            display: block
+    &__select-list
+        position: absolute
+        top: 44px
+        left: -1px
+        z-index: 100
+        width: calc(100% + 2px)
+        border-radius: 6px
+        border: 1px solid #e3e9ef
+        box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05)
+        background-color: var(--vc-white)
+        opacity: 0
+        pointer-events: none
+        .vc-schedule__select--open &
+            opacity: 1
+            pointer-events: all
+    &__select-item
+        font-size: 14px
+        font-style: normal
+        font-weight: 500
+        line-height: 1
+        color: #4c5053
+        padding: 15px 16px
+        overflow: hidden
+        transition: 0.3s
+        &--selected
+            color: var(--vc-primary)
+        &:hover
+            background-color: #e7f5ff
+    &__branches
+        +fprop(16, 24, 414, 1300, margin-top)
+    &__branch
+        width: auto !important
+        border-radius: 6px
+        background-color: #f5f6fa
+        border: 1px solid #f5f6fa
+        height: 40px
+        padding: 12px
+        display: flex
+        align-items: center
+        font-size: 13px
+        font-style: normal
+        font-weight: 500
+        line-height: 1
+        color: #4c5053
+        cursor: pointer
+        &--active
+            background-color: var(--vc-white)
+            border-color: var(--vc-primary)
+            cursor: initial
+    &__dates
+        // margin-top: 24px
+        &--mt24
+            margin-top: 24px
+    &__date
+        width: auto !important
+        border-radius: 8px
+        border: 1px solid #cfebff
+        display: flex
+        flex-direction: column
+        padding: 6px 12px
+        cursor: pointer
+        transition: 0.3s
+        &--active
+            border-color: var(--vc-primary)
+        &--empty
+            border-color: #dbdee5
+            &.vc-schedule__date--active
+                border-color: #0d98fc
+        @media(max-width: 1023px)
+            flex-direction: row
+            padding: 8px 12px
+    &__date-title
+        font-size: 13px
+        font-style: normal
+        font-weight: 400
+        line-height: 1.53
+        color: #41404d
+        .vc-schedule__date--empty &
+            color: #9aa2b3
+        .vc-schedule__date--active &
+            color: #41404d
+    &__date-subtitle
+        font-size: 13px
+        font-style: normal
+        font-weight: 500
+        line-height: 1.53
+        color: #41404d
+        .vc-schedule__date--empty &
+            color: #9aa2b3
+        .vc-schedule__date--active &
+            color: #41404d
+        @media(max-width: 1023px)
+            margin-left: 6px
+    &__slots
+        margin-top: 16px
+        display: grid
+        grid-template-columns: repeat(5, 1fr)
+        grid-gap: 8px
+    &__slot
+        border-radius: 8px
+        background-color: #cfebff
+        height: 36px
+        display: flex
+        align-items: center
+        justify-content: center
+        font-size: 13px
+        font-style: normal
+        font-weight: 500
+        line-height: 1.4
+        color: #41404d
+        cursor: pointer
+        transition: 0.3s
+        &:hover
+            background-color: #9ed6fe
+        &:nth-child(9) ~ .vc-schedule__slot
+            display: none
+            .vc-schedule__slots--open &
+                display: flex
+    &__open
+        border-radius: 8px
+        background-color: #f5f6fa
+        height: 36px
+        display: flex
+        align-items: center
+        justify-content: center
+        cursor: pointer
+        transition: 0.3s
+        svg
+            display: block
+            transition: 0.3s
+            .vc-schedule__slots--open &
+                transform: scaleY(-1)
+        &:hover
+            background-color: #cfebff
+    &__empty
+        border-radius: 8px
+        background-color: #f5f6fa
+        padding: 17px
+        font-size: 14px
+        font-style: normal
+        font-weight: 400
+        line-height: 1.4
+        color: #9aa2b3
+        text-align: center
+        margin-top: 24px
+    &__empty-link
+        color: #0094f5
+        text-decoration-line: underline
+        text-decoration-style: dotted
+        text-decoration-skip-ink: none
+        text-decoration-thickness: 6%
+        text-underline-offset: 25%
+        text-underline-position: from-font
+        white-space: nowrap
+        cursor: pointer

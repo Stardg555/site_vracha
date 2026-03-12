@@ -1,0 +1,244 @@
+.vc-visual-editor
+    color: var(--vc-black)
+    +fprop(14, 18, 414, 1300)
+    font-weight: 400
+    font-style: normal
+    line-height: 1.57
+    .vc-body--wob &
+        color: var(--vc-white)
+    .vc-body--yob &
+        color: var(--vc-yellow)
+    h1
+        +fprop(28, 36, 414, 1300)
+        font-weight: 400
+        font-style: normal
+        line-height: 2.28
+        color: inherit
+        &:not(:last-child)
+            +fprop(10, 18, 414, 1300, margin-bottom)
+        &:not(:first-child)
+            +fprop(64, 110, 414, 1300, margin-top)
+    h2
+        +fprop(24, 32, 414, 1300)
+        margin: 0
+        font-weight: 400
+        font-style: normal
+        line-height: 1.75
+        color: inherit
+    h3
+        +fprop(18, 24, 414, 1300)
+        font-weight: 400
+        font-style: normal
+        line-height: 1.4
+        color: inherit
+        &:not(:last-child)
+            +fprop(16, 24, 414, 1300, margin-bottom)
+        &:not(:first-child)
+            +fprop(24, 40, 414, 1300, margin-top)
+        &:first-child
+            margin-top: 0
+    h4
+        +fprop(16, 18, 414, 1300)
+        font-weight: 400
+        font-style: normal
+        line-height: 1.4
+        color: inherit
+        &:not(:last-child)
+            margin-bottom: 16px
+        &:not(:first-child)
+            margin-top: 16px
+        b
+            font-weight: 500
+    p
+        +fprop(14, 15, 414, 1300)
+        font-style: normal
+        font-weight: 400
+        line-height: 1.6
+        color: inherit
+        margin-bottom: 0
+        &:first-child
+            margin-top: 0
+        margin-top: 16px
+    b
+        font-weight: 600
+    li
+        +fprop(16, 18, 414, 1300)
+        font-weight: 400
+        font-style: normal
+        line-height: 1.55
+        color: inherit
+        display: flex
+        align-items: flex-start
+        +fprop(8, 10, 414, 1300, gap)
+        ol, ul
+            margin-top: 0
+    ul.vc-custom-list
+        li
+            gap: 12px
+            &:not(:first-child)
+                margin-top: 16px
+            &::before
+                width: 24px
+                height: 24px
+                content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="%230D98FC" stroke-width="1.2" stroke-miterlimit="10"/><path d="M10.875 8.625L14.625 12L10.875 15.375" stroke="%230D98FC" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>')
+                background-color: unset
+                svg
+                    display: block
+                margin: 0
+    ul
+        &:not(:first-child)
+            margin-top: 24px
+        &:not(:last-child)
+            +fprop(24, 32, 414, 1300, margin-bottom)
+        li
+            color: inherit
+            +fprop(14, 15, 414, 1300)
+            font-style: normal
+            font-weight: 400
+            line-height: 24px
+            &::before
+                content: ''
+                width: 5px
+                height: 5px
+                margin-top: 10px
+                margin-bottom: 10px
+                background-color: var(--vc-black)
+                border-radius: 50%
+                flex-shrink: 0
+                .vc-body--bow &
+                    background-color: var(--vc-white)
+                .vc-body--wob &
+                    background-color: var(--vc-black)
+                .vc-body--yob &
+                    background-color: #2B4460FF
+    ol
+        counter-reset: vc-counter
+        &:not(:first-child)
+            +fprop(24, 32, 414, 1300, margin-top)
+        li
+            position: relative
+            color: inherit
+            +fprop(14, 16, 414, 1300)
+            font-style: normal
+            font-weight: 400
+            padding-left: 20px
+            line-height: 1.6
+            counter-increment: vc-counter
+            +fprop(5, 6, 414, 1300, gap)
+            margin-top: 0
+            &:not(:first-child)
+                margin-top: 0
+            &::before
+                position: absolute
+                left: 0
+                flex-shrink: 0
+                content: counter(vc-counter) "."
+    blockquote
+        +fprop(14, 18, 414, 1300)
+        font-weight: 400
+        font-style: italic
+        line-height: 1.57
+        color: inherit
+        +fprop(10, 18, 414, 1300, margin-top)
+        margin-bottom: 0
+        margin-left: 0
+        margin-right: 0
+        & + blockquote
+            +fprop(18, 24, 414, 1300, margin-top)
+    a
+        &:not(.vc-btn)
+            color: var(--vc-primary)
+            +fprop(14, 16, 414, 1300)
+            font-style: normal
+            font-weight: 400
+            line-height: 1.75
+            .vc-body--bow &
+                color: var(--vc-black)
+            .vc-body--wob &
+                color: var(--vc-white)
+            .vc-body--yob &
+                color: var(--vc-yellow)
+            &:visited
+                color: var(--vc-primary)
+                text-decoration: none
+                .vc-body--bow &
+                    color: var(--vc-black)
+                .vc-body--wob &
+                    color: var(--vc-white)
+                .vc-body--yob &
+                    color: var(--vc-yellow)
+            &:hover
+                color: var(--vc-primary)
+                text-decoration-line: underline
+                text-decoration-style: solid
+                text-decoration-skip-ink: none
+                text-decoration-thickness: 2.5%
+                text-underline-offset: auto
+                text-underline-position: from-font
+                .vc-body--bow &
+                    color: var(--vc-black)
+                .vc-body--wob &
+                    color: var(--vc-white)
+                .vc-body--yob &
+                    color: var(--vc-yellow)
+            &:focus
+                color: var(--vc-primary)
+                text-decoration: underline
+                .vc-body--bow &
+                    color: var(--vc-black)
+                .vc-body--wob &
+                    color: var(--vc-white)
+                .vc-body--yob &
+                    color: var(--vc-yellow)
+            &:active
+                color: var(--vc-primary)
+                text-decoration: none
+                .vc-body--bow &
+                    color: var(--vc-black)
+                .vc-body--wob &
+                    color: var(--vc-white)
+                .vc-body--yob &
+                    color: var(--vc-yellow)
+    &__table-wrapper
+        width: 100%
+        overflow-x: auto
+    table
+        border-collapse: collapse
+        &:not(:first-child)
+            +fprop(28, 32, 414, 1300, margin-top)
+        caption
+            color: #788D98
+            text-align: left
+            +fprop(16, 24, 414, 1300, margin-bottom)
+            font-size: 16px
+            font-style: normal
+            font-weight: 400
+            line-height: 1.2
+        thead
+            tr
+                background-color: #f5f6fa
+        th
+            height: 100%
+            color: var(--vc-black)
+            +fprop(12, 14, 414, 1300)
+            font-style: normal
+            font-weight: 500
+            line-height: 1.2
+            text-align: left
+            padding: 16px 12px
+            &:first-child
+                padding-left: 24px
+            &:last-child
+                padding-right: 24px
+        td
+            +fprop(13, 16, 414, 1300)
+            font-weight: 400
+            font-style: normal
+            line-height: 1.57
+            color: var(--vc-black)
+            border-bottom: 1px solid #e3e9ef
+            padding: 16px 12px
+            &:first-child
+                padding-left: 24px
+            &:last-child
+                padding-right: 24px

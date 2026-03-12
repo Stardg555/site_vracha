@@ -1,0 +1,481 @@
+.vc-record
+    &::after
+        content: ''
+        position: fixed
+        top: 0
+        left: 0
+        z-index: 900
+        width: 100%
+        height: 100%
+        display: block
+        background-color: var(--vc-primary)
+        opacity: 0
+        pointer-events: none
+        transition: 0.3s
+    &--is-overlay
+        &::after
+            opacity: 0.2
+            pointer-events: all
+    //@media(max-width: $headerBreakPoint)
+    //    margin-top: 60px
+    @media(max-width: 767px)
+        &::after
+            display: none
+            &--is-overlay
+                display: none
+    &__container
+        display: flex
+        justify-content: space-between
+        gap: 24px
+        border-radius: 24px
+        border: 1px solid #e3e9ef
+        margin-top: 24px
+        padding: 24px
+        @media(max-width: $headerBreakPoint)
+            flex-direction: column
+            border: unset
+            padding: unset
+    &__filters
+        max-width: 536px
+    &__filters-section
+        &:not(:first-child)
+            margin-top: 16px
+    &__filters-section-title
+        font-size: 16px
+        font-style: normal
+        font-weight: 500
+        line-height: 1.4
+        color: var(--vc-black)
+    &__filter-specs
+        display: flex
+        flex-wrap: wrap
+        gap: 12px
+        &:not(:first-child)
+            margin-top: 12px
+    &__filter-spec
+        height: 36px
+        display: flex
+        align-items: center
+        border-radius: 8px
+        border: 1px solid #c6d3de
+        padding: 11px 12px
+        cursor: pointer
+        font-size: 13px
+        font-style: normal
+        font-weight: 500
+        line-height: 1
+        color: #9aa2b3
+        transition: 0.3s
+        svg
+            display: block
+            path
+                transition: 0.3s
+        &--active,
+        &:hover
+            border-color: var(--vc-primary)
+            color: #3c3c3b
+            svg
+                path
+                    stroke: #3c3c3c
+        &:nth-child(3) ~ .vc-doctor-site__filter-spec[data-hide]
+            display: none
+            .vc-doctor-site__filter-specs--open &
+                display: flex
+        @media(max-width: 767px)
+            padding: 9px 12px
+    &__filter-spec-arrow
+        flex-shrink: 0
+        margin-left: 12px
+    &__bottom-spec
+        border-radius: 12px
+        border: 1px solid #e3e9ef
+        background: rgba(255, 255, 255, 0.80)
+        padding: 12px 16px
+        display: flex
+        align-items: center
+        justify-content: space-between
+        &:not(:first-child)
+            margin-top: 12px
+    &__bottom-service
+        border-radius: 12px
+        border: 1px solid #e3e9ef
+        padding: 12px 16px
+        &:not(:first-child)
+            margin-top: 12px
+    &__bottom-service-title
+        font-size: 14px
+        font-style: normal
+        font-weight: 400
+        line-height: 1.4
+        color: var(--vc-black)
+    &__bottom-service-price
+        font-size: 15px
+        font-style: normal
+        font-weight: 500
+        line-height: 1.2
+        color: var(--vc-black)
+        margin-top: 16px
+    &__filter-service-wrapper
+        margin-top: 16px
+    &__filter-service
+        display: flex
+        align-items: center
+        justify-content: space-between
+        border-radius: 8px
+        border: 1px solid #c6d3de
+        padding: 10px 12px 11px 16px
+        cursor: pointer
+        @media(max-width: 767px)
+            padding: 10px 12px 10px 16px
+            border: 1px solid var(--vc-primary)
+    &__filter-service-content
+        display: flex
+        align-items: center
+        justify-content: space-between
+        gap: 9px
+        flex-grow: 1
+        @media(max-width: 767px)
+            flex-wrap: wrap
+    &__filter-service-title
+        font-size: 14px
+        font-style: normal
+        font-weight: 500
+        line-height: 1
+        color: #4c5053
+        overflow: hidden
+        height: 14px
+        flex-shrink: 1
+        @media(max-width: 767px)
+            line-height: 1.2
+            height: auto
+    &__filter-service-price
+        font-size: 14px
+        font-style: normal
+        font-weight: 500
+        line-height: 1
+        color: #4c5053
+        white-space: nowrap
+        flex-shrink: 0
+    &__filter-service-arrow
+        flex-shrink: 0
+        margin-left: 10px
+        svg
+            display: block
+    &__services-all
+        position: fixed
+        top: 0
+        right: 0
+        z-index: 1000
+        width: 100%
+        max-width: 560px
+        height: 100vh
+        display: flex
+        flex-direction: column
+        background-color: var(--vc-white)
+        transition: 0.3s
+        transform: translateX(100%)
+        &--active
+            transform: translateX(0)
+        @media(max-width: 767px)
+            left: 0
+            right: auto
+            transform: translateX(-100%)
+            &--active
+                transform: translateX(0)
+    &__services-all-close
+        position: absolute
+        top: 20px
+        right: 20px
+        cursor: pointer
+        svg
+            display: block
+    &__services-search-wrapper
+        padding-top: 60px
+        +fprop(16, 24, 414, 1300, padding-right)
+        +fprop(16, 24, 414, 1300, padding-left)
+        padding-bottom: 24px
+    &__services-wrapper
+        width: 100%
+        flex-grow: 1
+        overflow: auto
+        +fprop(16, 24, 414, 1300, padding-right)
+        padding-bottom: 100px
+        +fprop(16, 24, 414, 1300, padding-left)
+        overflow-y: auto
+        scrollbar-width: none
+        -ms-overflow-style: none
+        &::-webkit-scrollbar 
+          width: 0 !important
+        .simplebar-track
+          border: none
+    &__services-search
+        position: relative
+        border-radius: 8px
+        background-color: #f5f6fa
+    &__services-search-input
+        width: 100%
+        font-size: 16px
+        font-style: normal
+        font-weight: 400
+        line-height: 1.25
+        color: #788d98
+        padding: 12px 12px 12px 48px
+        &::placeholder
+            opacity: 0.7
+    &__services-search-icon
+        position: absolute
+        top: 50%
+        left: 16px
+        +fprop(18, 24, 414, 1300, width)
+        transform: translateY(-50%)
+        svg
+            display: block
+            +fprop(18, 24, 414, 1300, width)
+            height: auto
+    &__services-section
+        & ~ .vc-record__services-section
+            margin-top: 32px
+    &__services-section-title
+        +fprop(16, 18, 414, 1300)
+        font-style: normal
+        font-weight: 500
+        line-height: 1.33
+        color: #41404d
+    &__services-section-list
+        margin-top: 12px
+    &__services-section-item
+        display: flex
+        align-items: center
+        +fprop(12, 16, 414, 1300, padding-top)
+        +fprop(0, 16, 768, 1300, padding-right)
+        +fprop(12, 16, 414, 1300, padding-bottom)
+        +fprop(0, 8, 768, 1300, padding-left)
+        border-bottom: 1px solid #e3e9ef
+        cursor: pointer
+        &--selected,
+        &:hover
+            .vc-record__services-section-item-icon svg path
+                stroke: var(--vc-primary)
+            .vc-record__services-section-item-title
+                color: var(--vc-primary)
+            .vc-record__services-section-item-price
+                color: var(--vc-primary)
+    &__services-section-item-icon
+        flex-shrink: 0
+        +fprop(8, 12, 414, 1300, margin-right)
+        svg
+            display: block
+            path
+                transition: 0.3s
+    &__services-section-item-title
+        +fprop(13, 14, 414, 1300)
+        font-style: normal
+        font-weight: 400
+        line-height: 1.21
+        color: #4c5053
+        margin-right: 12px
+        transition: 0.3s
+    &__services-section-item-price
+        +fprop(12, 13, 414, 1300)
+        font-style: normal
+        font-weight: 400
+        line-height: 1
+        color: #788d98
+        white-space: nowrap
+        flex-shrink: 0
+        margin-left: auto
+        transition: 0.3s
+    &__branches-wrapper
+        +fprop(16, 24, 414, 1300, margin-top)
+    &__branches
+        display: flex
+    &__branch
+        +fprop(40, 36, 414, 1300, height)
+        padding: 0 12px
+        border-radius: 8px
+        border: 1px solid #c6d3de
+        display: flex
+        align-items: center
+        font-size: 13px
+        font-style: normal
+        font-weight: 500
+        line-height: 1
+        color: #9aa2b3
+        white-space: nowrap
+        flex-shrink: 0
+        cursor: pointer
+        transition: 0.3s
+        &:not(:first-child)
+            margin-left: 12px
+        &--active
+            border-color: var(--vc-primary)
+            color: #3c3c3b
+    &__calendar-wrapper
+        display: flex
+        justify-content: center
+        margin-top: 16px
+    &__home-call
+        border-radius: 8px
+        background-color: #f5f6fa
+        width: 400px
+        flex-shrink: 0
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        align-self: stretch
+        padding: 24px 46px
+        @media(max-width: 1023px)
+            width: 100%
+            margin-top: 24px
+        @media(max-width: 767px)
+            padding: 24px
+    &__home-call-text
+        text-align: center
+        font-size: 14px
+        font-style: normal
+        font-weight: 400
+        line-height: 1.4
+        color: #788d98
+    &__home-call-btn
+        margin-top: 16px
+    &__schedule
+        //
+    &__schedule-wrapper
+        max-width: 560px
+        width: 100%
+    &__schedule-header
+        display: flex
+        align-items: center
+    &__schedule-title
+        font-size: 16px
+        font-style: normal
+        font-weight: 500
+        line-height: 1.4
+        color: #41404d
+    &__schedule-switcher
+        margin-left: 12px
+        display: flex
+    &__schedule-switch
+        border-radius: 8px
+        background-color: rgba(0, 148, 245, 0.10)
+        height: 36px
+        padding: 0 16px
+        display: flex
+        align-items: center
+        font-size: 13px
+        font-style: normal
+        font-weight: 500
+        line-height: 1
+        text-decoration-line: underline
+        text-decoration-style: dotted
+        text-decoration-skip-ink: none
+        text-decoration-thickness: 7%
+        text-underline-offset: 21%
+        text-underline-position: from-font
+        color: var(--vc-primary)
+        cursor: pointer
+        transition: 0.3s
+        &:not(:last-child)
+            margin-right: 12px
+        &--active
+            background-color: #f5f6fa
+            color: #3c3c3b
+            text-decoration: none
+            cursor: default
+    &__days-wrapper
+        +fprop(24, 16, 414, 1300, margin-top)
+    &__days
+        display: flex
+    &__day
+        border-radius: 8px
+        border: 1px solid #cfebff
+        padding: 0 12px
+        height: 52px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        cursor: pointer
+        transition: 0.3s
+        &--active
+            border: 1px solid #0094f5
+        &:not(:first-child)
+            margin-left: 8px
+        @media(max-width: 767px)
+            flex-direction: row
+            align-items: center
+            height: 36px
+    &__day-title
+        font-size: 13px
+        font-style: normal
+        font-weight: 400
+        line-height: 1.53
+        color: var(--vc-black)
+    &__day-subtitle
+        font-size: 13px
+        font-style: normal
+        font-weight: 500
+        line-height: 1.53
+        color: var(--vc-black)
+        white-space: nowrap
+        @media(max-width: 767px)
+            margin-left: 6px
+    &__time
+        display: grid
+        grid-template-columns: repeat(7, 1fr)
+        +fprop(8, 12, 414, 1300, grid-gap)
+        +fprop(24, 16, 414, 1300, margin-top)
+        @media(max-width: 1279px)
+            grid-template-columns: repeat(6, 1fr)
+        @media(max-width: 1023px)
+            grid-template-columns: repeat(5, 1fr)
+        @media(max-width: 900px)
+            grid-template-columns: repeat(4, 1fr)
+    &__time-item
+        border-radius: 8px
+        background-color: #cfebff
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 36px
+        font-size: 13px
+        font-style: normal
+        font-weight: 500
+        line-height: 1.4
+        color: var(--vc-black)
+        cursor: pointer
+        transition: 0.3s
+        &--inactive
+            background-color: #f5f6fa
+        &:nth-child(13) ~ .vc-doctor-site__time-item
+            display: none
+            .vc-doctor-site__time--open &
+                display: flex
+        @media(max-width: 1279px)
+            &:nth-child(11) ~ .vc-doctor-site__time-item
+                display: none
+                .vc-doctor-site__time--open &
+                    display: flex
+        @media(max-width: 1023px)
+            &:nth-child(9) ~ .vc-doctor-site__time-item
+                display: none
+                .vc-doctor-site__time--open &
+                    display: flex
+        @media(max-width: 900px)
+            &:nth-child(7) ~ .vc-doctor-site__time-item
+                display: none
+                .vc-doctor-site__time--open &
+                    display: flex
+    &__time-arrow
+        border-radius: 8px
+        background-color: #f5f6fa
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 36px
+        cursor: pointer
+        svg
+            display: block
+            transition: 0.3s
+            .vc-doctor-site__time--open &
+                transform: scaleY(-1)

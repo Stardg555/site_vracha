@@ -1,0 +1,363 @@
+.vc-gallery
+    position: relative
+    &:hover
+        .vc-gallery__main-slider-nav
+            opacity: 1
+    &.vc-main-gallery
+        margin: 0
+        padding-left: 0
+        padding-right: 0
+        +fprop(24, 40, 414, 1300, padding-top)
+        +fprop(24, 40, 414, 1300, padding-bottom)
+        .vc-gallery__photo
+            min-height: unset
+            aspect-ratio: 500 / 338
+            @media(max-width: 767px)
+                aspect-ratio: 326 / 266
+        .vc-gallery__main-slider-arrow--active
+            pointer-events: all
+            opacity: 1
+        .vc-section__content
+            +fprop(24, 50, 414, 1300, margin-top)
+    &.vc-gallery--horizontal
+        .vc-gallery__photo
+            padding: 5px
+            max-width: 190px
+            aspect-ratio: 190 / 263
+            border-radius: unset
+            border: 1px solid #E3E9EF
+        .vc-gallery__photo-img
+            top: 5px
+            left: 5px
+            width: calc(100% - 10px)
+            height: calc(100% - 10px)
+        .vc-gallery__slider-content
+            width: fit-content
+        .vc-gallery__slider-slide-img
+            aspect-ratio: unset
+            width: auto
+        .vc-gallery__carousel-slide
+            border-radius: unset
+            max-width: unset
+            width: fit-content
+            aspect-ratio: unset
+        .vc-gallery__carousel-slide-img
+            position: static
+            aspect-ratio: unset
+            width: auto
+    &__sliders
+        position: fixed
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        top: 0
+        left: 0
+        z-index: 1000
+        width: 100%
+        height: 100%
+        background-color: rgba(0, 0, 0, 0.8)
+        opacity: 0
+        pointer-events: none
+        transition: 0.3s
+        gap: 16px
+        +fprop(30, 100, 414, 1300, padding-top)
+        +fprop(30, 100, 414, 1300, padding-bottom)
+        @media(max-width: 500px)
+            gap: 12px
+        &--active
+            opacity: 1
+            pointer-events: all
+    &__photos
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        +fprop(16, 32, 414, 1300, grid-gap)
+        @media(max-width: 1024px)
+            grid-template-columns: 1fr 1fr
+        @media(max-width: 767px)
+            grid-template-columns: 1fr
+    &__title
+        +fprop(18, 24, 414, 1300)
+        +fprop(24, 32, 414, 1300, margin-bottom)
+        color: var(--vc-black)
+        font-size: 24px
+        font-style: normal
+        font-weight: 400
+        line-height: 2
+    &__photo
+        position: relative
+        display: flex
+        cursor: pointer
+        flex-direction: column-reverse
+        overflow: hidden
+        border-radius: 24px
+        min-height: 300px
+        &:hover
+            &:before
+                opacity: 0.1
+        &:before
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            content: ''
+            background-color: var(--vc-white)
+            transition: 0.3s
+            z-index: 10
+            opacity: 0
+        @media(max-height: 767px)
+            min-height: 280px
+    &__info
+        transition: 0.3s
+        z-index: 2
+        position: absolute
+        bottom: 0
+        left: 0
+        +fprop(12, 20, 414, 1300, margin-left)
+        +fprop(12, 20, 414, 1300, margin-right)
+        +fprop(12, 18, 414, 1300, margin-bottom)
+        display: flex
+        flex-direction: column
+        @media(max-width: 767px)
+            display: none
+            transform: unset
+    &__info-title
+        color: var(--vc-white)
+        +fprop(16, 18, 414, 1300)
+        font-style: normal
+        font-weight: 400
+        line-height: 1.2
+    &__info-subtitle
+        color: var(--vc-white)
+        margin-top: 12px
+        +fprop(13, 14, 414, 1300)
+        font-style: normal
+        font-weight: 300
+        line-height: 1.6
+    &__photo-img
+        position: absolute
+        //z-index: -1
+        width: 100%
+        height: 100%
+        object-fit: cover
+        object-position: center
+    &__slider
+        display: flex
+        justify-content: center
+        width: 100%
+        height: 100%
+        opacity: 0
+        pointer-events: none
+        transition: 0.3s
+        @media(max-width: 1279px)
+            height: fit-content
+        &--active
+            opacity: 1
+            transform: scale(1)
+            pointer-events: all
+    &__slider-wrapper
+        align-items: center
+    &__slider-slide
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 100%
+    &__slider-content
+        display: flex
+        align-items: center
+        justify-content: center
+        position: relative
+        overflow: hidden
+        height: 100%
+        width: 100%
+        max-width: 65.375%
+        border-radius: 24px
+        max-height: 1200px
+        @media(max-width: 1919px)
+            max-height: 650px
+        @media(max-width: 1279px)
+            height: auto
+            max-width: 65.375%
+        @media(max-width: 500px)
+            max-width: 91.79%
+        @media(max-width: 767px)
+            height: fit-content
+    &__slider-slide-img
+        aspect-ratio: 500 / 338
+        height: 100%
+        width: 100%
+        max-height: 700px
+        object-fit: cover
+        object-position: center
+        @media(min-width: 1920px)
+            max-height: 1200px
+    &__slider-close
+        position: absolute
+        +fprop(-34, -26, 414, 1300, top)
+        +fprop(16, 170, 414, 1300, right)
+        z-index: 10
+        width: 20px
+        height: 20px
+        cursor: pointer
+        opacity: 0.8
+        transition: 0.3s
+        &::before
+            content: ''
+            position: absolute
+            top: 50%
+            left: 50%
+            width: 100%
+            height: 2px
+            border-radius: 1px
+            background-color: var(--vc-white)
+            transform: translate(-50%, -50%) rotateZ(45deg)
+        &::after
+            content: ''
+            position: absolute
+            top: 50%
+            left: 50%
+            width: 2px
+            height: 100%
+            border-radius: 1px
+            transform: translate(-50%, -50%) rotateZ(45deg)
+            background-color: var(--vc-white)
+        &:hover
+            opacity: 1
+    .vc-gallery__main-slider
+        .swiper-wrapper
+            height: auto
+        .vc-gallery__photo
+            max-width: 326px
+            @media(min-width: 500px)
+                max-width: 500px
+    &__main-slider-nav
+        position: absolute
+        top: 40%
+        left: 0
+        z-index: 10
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: space-between
+        pointer-events: none
+        opacity: 0
+        transition: 0.3s
+        @media(max-width: 1023px)
+            display: none
+    &__slider-nav
+        position: absolute
+        top: 50%
+        left: 0
+        z-index: 10
+        width: 100%
+        display: none
+        pointer-events: none
+        align-items: center
+        justify-content: space-between
+        transform: translateY(-50%)
+        +fprop(10, 150, 414, 1300, padding-left)
+        +fprop(10, 150, 414, 1300, padding-right)
+        .vc-gallery__arrow--active
+            opacity: 1
+            pointer-events: all
+            svg, path
+                stroke: var(--vc-white)
+        .vc-gallery__sliders--active &
+            display: flex
+        @media(max-width: 500px)
+            display: none
+    &__main-slider-arrow
+        border-radius: 50%
+        background-color: var(--vc-white)
+        width: 54px
+        height: 54px
+        display: flex
+        align-items: center
+        justify-content: center
+        pointer-events: all
+        cursor: pointer
+        transition: 0.3s
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05)
+        svg
+            display: block
+        &--left
+            svg
+                transform: scaleX(-1)
+        &:hover
+            background: #C8C3F5
+    &__slider-arrow
+        background: rgba(255, 255, 255, 0.10)
+        svg, path
+            stroke: var(--vc-white)
+        &:hover
+            background: rgba(255, 255, 255, 0.20)
+            svg, path
+                opacity: 1
+        pointer-events: none
+        opacity: 0
+        display: flex
+        cursor: pointer
+        width: 54px
+        height: 54px
+        border-radius: 100px
+        align-items: center
+        justify-content: center
+        transition: 0.3s
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05)
+        &--left
+            svg
+                transform: scaleX(-1)
+        &--active
+            opacity: 1
+            pointer-events: all
+        @media(max-width: 767px)
+            display: none
+        svg,
+        img,
+        rect
+            display: block
+            transition: 0.3s
+    &__carousel
+        width: 100%
+        opacity: 1
+    &__carousel-slide
+        position: relative
+        cursor: pointer
+        border-radius: 12px
+        overflow: hidden
+        aspect-ratio: 164 / 100
+        &:hover
+            .vc-gallery__carousel-slide-img
+                transform: scale(1.1)
+        max-width: fit-content
+        +fprop(70, 100, 414, 1300, height)
+    &__carousel-slide-img
+        transition: 0.3s
+        object-fit: cover
+        width: 100%
+        height: auto
+    &__main-slider-arrow
+        background: unset
+        box-shadow: unset
+        width: 32px
+        height: 32px
+        &:hover
+            background: unset
+    &__title-slider-nav
+        display: flex
+        align-items: center
+        margin-left: auto
+        gap: 16px
+        @media(max-width: 767px)
+            display: none
+    &__title-arrow
+        cursor: pointer
+        svg
+            display: block
+    &__title-arrow--left
+        svg
+            transform: scaleX(-1)
+    &__arrow--active
+        svg, path
+            stroke: var(--vc-primary)

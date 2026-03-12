@@ -1,0 +1,104 @@
+.vc-mirror
+    &__main.vc-visual-editor
+        li
+            gap: 12px
+            &:not(:first-child)
+                margin-top: 16px
+            &::before
+                width: 24px
+                height: 24px
+                content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="%230D98FC" stroke-width="1.2" stroke-miterlimit="10"/><path d="M10.875 8.625L14.625 12L10.875 15.375" stroke="%230D98FC" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>')
+                background-color: unset
+                svg
+                    display: block
+                margin: 0
+    &__item
+        overflow: hidden
+        border-radius: 24px
+        border: 1px solid #E3E9EF
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-template-rows: auto 1fr
+        @media(max-width: 767px)
+            grid-template-columns: 1fr
+            grid-template-rows: auto
+        +fprop(24, 32, 414, 1300, padding-top)
+        +fprop(16, 48, 414, 1300, padding-right)
+        +fprop(24, 32, 414, 1300, padding-bottom)
+        +fprop(16, 48, 414, 1300, padding-left)
+        &:not(:first-child)
+            +fprop(16, 32, 414, 1300, margin-top)
+        &:nth-child(2n + 2)
+            .vc-mirror__item-image
+                margin: 0 20px 0 0
+                grid-column-start: 1
+                grid-column-end: 2
+                justify-self: start
+                @media(max-width: 767px)
+                    grid-column-start: 1
+                    grid-column-end: 2
+                    margin: 0 0 16px 0
+            .vc-mirror__item-content
+                grid-column-start: 2
+                grid-column-end: 3
+                margin: 0 0 0 auto
+                @media(max-width: 767px)
+                    grid-column-start: 1
+                    grid-column-end: 2
+            h3
+                grid-column-start: 2
+                grid-column-end: 3
+                margin-left: auto
+                @media(max-width: 767px)
+                    grid-column-start: 1
+                    grid-column-end: 2
+    h3
+        max-width: 540px
+        width: 100%
+        grid-row-start: 1
+        grid-row-end: 2
+        grid-column-start: 1
+        grid-column-end: 2
+        @media(max-width: 767px)
+            max-width: unset
+    &__item-content
+        grid-row-start: 2
+        grid-row-end: 3
+        grid-column-start: 1
+        grid-column-end: 2
+        max-width: 540px
+        margin-right: auto
+        @media(max-width: 767px)
+            grid-row-start: 3
+            grid-row-end: 4
+            max-width: unset
+    &__item-title
+        color: var(--vc-black)
+        +fprop(24, 32, 414, 1300)
+        font-style: normal
+        font-weight: 400
+        line-height: 1.4
+    &__item-text
+        color: var(--vc-black)
+        +fprop(15, 16, 414, 1300)
+        font-style: normal
+        font-weight: 400
+        line-height: 1.8
+    &__item-image
+        position: relative
+        margin-left: 20px
+        max-width: 500px
+        max-height: 400px
+        border-radius: 24px
+        overflow: hidden
+        grid-row-start: 1
+        grid-row-end: 3
+        justify-self: end
+        @media(max-width: 767px)
+            margin: 0 0 16px 0
+            max-width: unset
+            grid-column-start: 1
+            grid-row-start: 2
+    &__item-image-img
+        display: block
+        width: 100%

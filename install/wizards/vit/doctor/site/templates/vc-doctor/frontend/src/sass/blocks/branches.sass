@@ -1,0 +1,146 @@
+.vc-branches
+    &__main
+        display: flex
+        min-height: 500px
+        +fprop(16, 32, 414, 1300, gap)
+        @media(max-width: 767px)
+            flex-direction: column
+    &__map-wrapper
+        display: flex
+        flex: 0 10 800px
+        border-radius: 24px
+        overflow: hidden
+        div[id^="bx_incl_area"]
+            flex: 0 1 800px
+            display: flex
+            @media(max-width: 767px)
+                width: 100%
+                flex: 1 1 auto
+        @media(max-width: 767px)
+            width: 100%
+            flex: 1 1 auto
+    &__map
+        flex: 0 10 800px
+        border-radius: 24px
+        overflow: hidden
+        @media(max-width: 767px)
+            width: 100%
+            flex: 1 1 400px
+    &__contacts
+        flex: 1 1 auto
+        display: flex
+        flex-direction: column
+        gap: 12px
+        min-height: 500px
+        +fprop(16, 24, 414, 1300, padding)
+        border-radius: 24px
+        background: #F5F6FA
+        overflow: hidden
+        div[id^="bx_incl_area"]
+            flex: 1 1 94px
+            display: flex
+    &__contact
+        flex: 1 1 88px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        border-radius: 12px
+        border: 1px solid #E3E9EF
+        background: var(--vc-white)
+        padding: 16px
+        transition: 0.3s
+    &__contact-info
+        display: flex
+        flex-direction: column
+    &__contact-link
+        margin-top: 8px
+        color: var(--vc-primary)
+        font-size: 16px
+        font-style: normal
+        font-weight: 400
+        line-height: 1
+        transition: 0.3s
+        &:hover
+            text-decoration-line: underline
+            text-decoration-style: solid
+            text-decoration-skip-ink: none
+            text-decoration-thickness: 2.5%
+            text-underline-offset: auto
+            text-underline-position: from-font
+    &__contact-title
+        color: #788D98
+        font-size: 13px
+        font-style: normal
+        font-weight: 400
+        line-height: 1
+    &__contact-subtitle
+        color: var(--vc-black)
+        font-size: 15px
+        margin-top: 8px
+        font-style: normal
+        font-weight: 400
+        line-height: 1
+    &__contact-text
+        margin-top: 8px
+        color: var(--vc-black)
+        font-size: 18px
+        font-style: normal
+        font-weight: 500
+        line-height: 1
+        transition: 0.3s
+        &:hover
+            color: var(--vc-primary)
+    &__socials
+        display: flex
+        gap: 20px
+        height: 40px
+        width: 100%
+        align-items: center
+        justify-content: center
+    &__social
+        display: block
+        flex-shrink: 0
+        height: 100%
+        border-radius: 100px
+        overflow: hidden
+        background-color: #F5F6FA
+        svg, path, rect
+            display: block
+            width: 100%
+            height: 100%
+            transition: 0.3s
+        &:hover
+            svg, path
+                fill: var(--vc-white)
+        &--vk
+            &:hover
+                svg
+                    background-color: #2B8BF2
+        &--yu
+            &:hover
+                svg
+                    background-color: #E73036
+        &--tg
+            &:hover
+                svg
+                    background-color: #29AAEC
+        &--ok
+            &:hover
+                svg
+                    background-color: #F70
+    &__contact-icon
+        margin-left: 8px
+        flex-shrink: 0
+        display: flex
+        width: 36px
+        height: 36px
+        align-items: center
+        justify-content: center
+        overflow: hidden
+        border-radius: 100px
+        background: #D4FCEB
+        transition: 0.3s
+    &__contact-btn
+        margin-top: 4px
+        @media(max-width: 767px)
+            margin-top: 0

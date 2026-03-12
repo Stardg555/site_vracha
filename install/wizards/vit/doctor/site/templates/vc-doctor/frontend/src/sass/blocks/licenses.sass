@@ -1,0 +1,211 @@
+.vc-licenses
+    &__carousel
+        position: relative
+        padding: 0 24px
+        margin-left: -24px
+        margin-right: -24px
+        overflow: hidden
+        opacity: 0
+        @media(max-width: 500px)
+            overflow: visible
+            max-width: 95%
+    &__carousel-wrapper
+        height: auto
+    &__carousel-slide
+        cursor: pointer
+        border-radius: 12px
+        border: 1px solid #e3e9ef
+        padding: 24px 16px
+        display: flex
+        flex-direction: column
+        height: auto !important
+        &:hover
+            .vc-licenses__carousel-slide-image-img
+                transform: scale(1.1)
+    &__carousel-slide-image
+        display: flex
+        align-items: center
+        justify-content: center
+        .vc-body--yob &
+            border: 1px solid var(--vc-yellow)
+            background-color: var(--vc-blue-dark)
+    &__carousel-slide-image-img
+        display: block
+        max-width: 240px
+        max-height: 180px
+        transition: 0.3s
+    &__carousel-slide-title
+        font-size: 16px
+        font-weight: 500
+        font-style: normal
+        line-height: 1.22
+        color: var(--vc-black)
+        text-align: center
+        margin-top: 32px
+        .vc-body--wob &
+            color: var(--vc-white)
+        .vc-body--yob &
+            color: var(--vc-yellow)
+    &__carousel-nav
+        position: absolute
+        top: 50%
+        left: 0
+        z-index: 10
+        width: 100%
+        pointer-events: none
+        display: flex
+        align-items: center
+        justify-content: space-between
+        transform: translateY(-80%)
+        @media(max-width: 500px)
+            display: none
+    &__carousel-arrow
+        display: flex
+        width: 48px
+        height: 48px
+        justify-content: center
+        align-items: center
+        border-radius: 50%
+        overflow: hidden
+        cursor: pointer
+        pointer-events: all
+        transition: 0.3s
+        svg,
+        img
+            display: block
+            width: 100%
+            height: 100%
+            rect
+                transition: 0.3s
+        &:hover
+            svg,
+            img
+                display: block
+                rect
+                    fill: var(--vc-primary-light)
+    &__slider
+        position: fixed
+        top: 0
+        left: 0
+        z-index: 1000
+        width: 100%
+        height: 100%
+        background-color: rgba(0, 0, 0, 0.8)
+        opacity: 0
+        transform: scale(1.1)
+        pointer-events: none
+        transition: 0.3s
+        &--active
+            opacity: 1
+            transform: scale(1)
+            pointer-events: all
+    &__slider-wrapper
+        //
+    &__slider-slide
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 100%
+    &__slider-slide-content
+        width: 65.375%
+        display: flex
+        flex-direction: column
+        align-items: center
+        @media(max-width: 767px)
+            width: 100%
+    &__slider-slide-image
+        //width: 100%
+    &__slider-slide-image-img
+        display: block
+        width: 100%
+        max-width: 1046px
+        max-height: 770px
+    &__slider-slide-title
+        +fprop(14, 18, 414, 1300)
+        font-weight: 400
+        font-style: normal
+        line-height: 1.56
+        color: var(--vc-white)
+        +fprop(12, 16, 414, 1300, margin-top)
+    &__slider-close
+        position: absolute
+        +fprop(24, 52, 414, 1300, top)
+        +fprop(24, 72, 414, 1300, right)
+        z-index: 10
+        width: 20px
+        height: 20px
+        cursor: pointer
+        opacity: 0.8
+        transition: 0.3s
+        &::before
+            content: ''
+            position: absolute
+            top: 50%
+            left: 50%
+            width: 100%
+            height: 2px
+            border-radius: 1px
+            background-color: var(--vc-white)
+            transform: translate(-50%, -50%) rotateZ(45deg)
+        &::after
+            content: ''
+            position: absolute
+            top: 50%
+            left: 50%
+            width: 2px
+            height: 100%
+            border-radius: 1px
+            transform: translate(-50%, -50%) rotateZ(45deg)
+            background-color: var(--vc-white)
+        &:hover
+            opacity: 1
+    &__slider-nav
+        position: absolute
+        top: 50%
+        left: 0
+        z-index: 10
+        width: 100%
+        pointer-events: none
+        display: flex
+        align-items: center
+        justify-content: space-between
+        transform: translateY(-50%)
+        +fprop(20, 64, 414, 1300, padding-left)
+        +fprop(20, 64, 414, 1300, padding-right)
+        @media(max-width: 500px)
+            display: none
+    &__slider-arrow
+        display: flex
+        cursor: pointer
+        pointer-events: all
+        transition: 0.3s
+        svg,
+        img,
+        rect
+            display: block
+            transition: 0.3s
+        &:hover
+            svg,
+            img
+                display: block
+                rect
+                    fill: var(--vc-primary-light)
+    &__title-slider-nav
+        display: flex
+        align-items: center
+        margin-left: auto
+        gap: 16px
+        &:not(:has(.vc-licenses__arrow--active))
+            display: none
+        @media(max-width: 767px)
+            display: none
+    &__title-arrow
+        cursor: pointer
+        svg
+            display: block
+    &__title-arrow--left
+        svg
+            transform: scaleX(-1)
+    &__arrow--active
+        svg, path
+            stroke: var(--vc-primary)

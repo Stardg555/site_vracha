@@ -1,0 +1,1 @@
+<?= file_get_contents($_SERVER['DOCUMENT_ROOT'].SITE_TEMPLATE_PATH.'/assets/img/header/logo-new.svg'); ?>

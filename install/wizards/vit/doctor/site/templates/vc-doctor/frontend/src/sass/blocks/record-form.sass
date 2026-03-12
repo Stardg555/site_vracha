@@ -1,0 +1,1032 @@
+.vc-record-form
+    .vc-record-form__inputs
+        .vc-record-form__input, .vc-record-form__select, .vc-record-form__datetime
+            margin-bottom: 0
+    .vc-record-form__inputs + .vc-record-form__info-wrapper
+        +fprop(12, 16, 414, 1300, margin-top)
+    @media(max-width: 767px)
+        .vc-center
+            padding: 0
+    &__inputs
+        display: grid
+        width: 100%
+        +fprop(12, 24, 414, 1300, grid-gap)
+        grid-template-columns: 1fr 1fr
+        @media(max-width: 767px)
+            grid-template-columns: 1fr
+    &__selects
+        display: grid
+        width: 100%
+        +fprop(12, 24, 414, 1300, grid-gap)
+        grid-template-columns: 1fr 1fr
+        @media(max-width: 767px)
+            grid-template-columns: 1fr
+    &__names
+        display: flex
+    &__container
+        position: relative
+        +fprop(32, 48, 414, 1300, padding-top)
+        padding-right: 64px
+        +fprop(32, 48, 414, 1300, padding-bottom)
+        padding-left: 64px
+        border-radius: 16px
+        // overflow: hidden
+        @media(max-width: 767px)
+            padding-left: 20px
+            padding-right: 20px
+    &__bg
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        border-top-left-radius: 16px
+        border-bottom-left-radius: 16px
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            z-index: 10
+            width: 87.3015873%
+            height: 100%
+            //background-image: linear-gradient(-270deg, #f0f0f0 66.6%, #{$transparent} 100%)
+            border-top-left-radius: 16px
+            border-bottom-left-radius: 16px
+            .vc-body--bow &
+                background-image: none
+            .vc-body--wob &
+                background-image: none
+            //.vc-body--yob &
+                background-image: none
+            @media(max-width: 767px)
+                background: #f0f0f0
+                width: 100%
+                border-radius: 0
+                .vc-body--bow &
+                    background: var(--vc-white)
+                .vc-body--wob &
+                    background: var(--vc-black)
+                //.vc-body--yob &
+                    background: $blueDark
+        //&--small
+            &::before
+                background-image: linear-gradient(-270deg, #f0f0f0 80%, #{$transparent} 100%)
+                .vc-body--bow &
+                    background-image: none
+                .vc-body--wob &
+                    background-image: none
+                //.vc-body--yob &
+                    background-image: none
+    &__bg-image
+        position: absolute
+        top: 0
+        right: 0
+        z-index: 0
+        height: 100%
+        aspect-ratio: 511 / 520
+        @media(max-width: 767px)
+            display: none
+    &__bg-image-img
+        position: absolute
+        top: 0
+        right: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+        object-position: top right
+        border-top-right-radius: 16px
+        border-bottom-right-radius: 16px
+    &__content
+        position: relative
+        z-index: 10
+    &__title
+        +fprop(32, 56, 414, 1300)
+        font-weight: 500
+        font-style: normal
+        line-height: 1.14
+        color: #222222FF
+        .vc-body--bow &
+            color: var(--vc-black)
+        .vc-body--wob &
+            color: var(--vc-white)
+        //.vc-body--yob &
+            color: $yellow
+    &__subtitle
+        +fprop(14, 18, 414, 1300)
+        font-weight: 400
+        font-style: normal
+        line-height: 1.57
+        color: var(--vc-black)Lighter
+        max-width: 661px
+        .vc-body--bow &
+            color: var(--vc-black)
+        .vc-body--wob &
+            color: var(--vc-white)
+        .vc-body--yob &
+            color: var(--vc-yellow)
+    &__form
+        display: flex
+        flex-wrap: wrap
+        &--w100
+            max-width: unset
+    &__inputs-wrapper
+        width: 100%
+        display: flex
+        flex-wrap: nowrap
+        gap: 16px
+        &:not(:last-child)
+            margin-bottom: 16px
+        .vc-for-tax &
+            gap: 24px
+        @media(max-width: 1024px)
+            flex-wrap: wrap
+            .vc-for-tax &
+                margin-bottom: 0
+    &__input-ph
+        position: absolute
+        top: 50%
+        z-index: 120
+        left: 16px
+        overflow: hidden
+        font-size: 15px
+        font-style: normal
+        font-weight: 400
+        line-height: 1
+        color: #788d98
+        transform: translateY(-50%)
+        transition: 0.3s
+        pointer-events: none
+    &__select-ph
+        @extend .vc-record-form__input-ph
+    &__input
+        border-radius: 6px
+        border: 1px solid #f5f6fa
+        background-color: #f5f6fa
+        padding: 18px 16px 0
+        width: 100%
+        height: 50px
+        font-size: 15px
+        font-style: normal
+        font-weight: 400
+        line-height: 1
+        color: #41404d
+        transition: 0.3s
+        &::placeholder
+            opacity: 0
+        &:not(:placeholder-shown)
+            background-color: var(--vc-white)
+            border-color: #c6d3de
+            & + .vc-record-form__input-ph
+                top: 15px
+                font-size: 12px
+        &:focus
+            background-color: var(--vc-white)
+            border-color: var(--vc-primary)
+            & + .vc-record-form__input-ph
+                top: 15px
+                font-size: 12px
+                z-index: 140
+        .vc-body--bow &
+            border-color: var(--vc-black)
+        .vc-body--wob &
+            background-color: var(--vc-black)
+            color: var(--vc-white)
+            border-color: var(--vc-white)
+        .vc-body--yob &
+            background-color: var(--vc-blue-dark)
+            color: var(--vc-yellow)
+            border-color: var(--vc-yellow)
+        &::placeholder
+            color: #9BAAB6
+            .vc-body--bow &
+                color: var(--vc-black)
+            .vc-body--wob &
+                color: var(--vc-white)
+            .vc-body--yob &
+                color: var(--vc-yellow)
+        &--w100
+            width: 100%
+        &--gray
+            background-color: rgba(0, 0, 0, 0.05)
+            border-color: rgba(0, 0, 0, 0.05)
+            .vc-body--bow &
+                border-color: var(--vc-black)
+            .vc-body--wob &
+                background-color: var(--vc-black)
+                border-color: var(--vc-white)
+        &.error
+            border-color: #FF4E4E
+            color: #FF4E4E
+            &::placeholder
+                color: var(--vc-secondary)
+                .vc-body--bow &
+                    color: var(--vc-secondary)
+                .vc-body--wob &
+                    color: var(--vc-secondary)
+                .vc-body--yob &
+                    color: var(--vc-yellow)
+        &:focus
+            outline: none
+            background: var(--vc-white)
+            border: 1px solid var(--vc-primary)
+        &:active
+            outline: none
+        //border-radius: 6px
+        //border: 1px solid #C6D3DE
+        //+fprop(48, 50, 414, 1300, height)
+        //min-width: 264px
+        //width: 100%
+        //+fprop(12, 16, 414, 1300, padding-top)
+        //+fprop(12, 16, 414, 1300, padding-right)
+        //+fprop(12, 16, 414, 1300, padding-bottom)
+        //+fprop(12, 16, 414, 1300, padding-left)
+        //transition: 0.3s
+        //background-color: var(--vc-white)
+        //flex-grow: 1
+    &__textarea
+        @extend .vc-record-form__input
+        min-height: 140px
+        padding-top: 25px
+        & + .vc-record-form__input-ph
+            top: 25px
+        &--w100
+            width: 100%
+        &--gray
+            background-color: rgba(0, 0, 0, 0.05)
+            border-color: rgba(0, 0, 0, 0.05)
+            .vc-body--bow &
+                border-color: var(--vc-black)
+            .vc-body--wob &
+                background-color: var(--vc-black)
+                border-color: var(--vc-white)
+            .vc-body--yob &
+                background-color: var(--vc-blueDark)
+                border-color: var(--vc-yellow)
+    &__select-wrapper
+        width: 100%
+        .vc-search__select
+            +fprop(10, 12, 414, 1300, margin-top)
+    &__input-wrapper
+        position: relative
+        display: flex
+        flex-direction: column
+        width: 100%
+    &__input-name
+        color: var(--vc-black)
+        font-style: normal
+        font-weight: 500
+        line-height: 1.44
+        +fprop(16, 18, 414, 1300)
+        @media(min-width: 768px)
+            white-space: nowrap
+            overflow: hidden
+            text-overflow: ellipsis
+    &__select-name
+        color: var(--vc-black)
+        font-style: normal
+        font-weight: 500
+        line-height: 1.44
+        +fprop(16, 18, 414, 1300)
+        +fprop(10, 12, 414, 1300, margin-bottom)
+        .vc-body--wob &
+            color: var(--vc-white)
+        .vc-body--yob &
+            color: var(--vc-yellow)
+    &__select
+        position: relative
+        height: 50px
+        min-width: 268px
+        padding: 0 16px
+        cursor: pointer
+        //&:not(:last-child)
+            +fprop(8, 12, 414, 1300, margin-bottom)
+        &--on-top
+            z-index: 200
+        .vc-modal__content &
+            height: 48px
+            flex-grow: 1
+        &.vc-record-form__select--selected
+            .vc-record-form__input-ph
+                top: 15px
+                font-size: 12px
+            .vc-record-form__select-ph
+                top: 12px
+            .vc-record-form__select-title
+                opacity: 1
+                color: var(--vc-black)
+            .vc-record-form__select-header
+                border: 1px solid #c6d3de
+                background-color: var(--vc-white)
+        &.vc-record-form__select--open
+            .vc-record-form__select-header
+                margin-bottom: 4px
+                background-color: var(--vc-white)
+                border: 1px solid #0D98FC
+            .vc-record-form__select-ph
+                top: 12px
+                font-size: 12px
+            //.vc-record-form__select-container ~ .vc-record-form__input-ph
+                z-index: 140
+    &__select-container
+        position: absolute
+        top: 0
+        left: 0
+        background-color: var(--vc-white)
+        //border: 1px solid #F5F6FA
+        //border-radius: 6px
+        height: auto
+        width: 100%
+        overflow: hidden
+        transition: 0.3s
+        scrollbar-width: none
+        -ms-overflow-style: none
+        &::-webkit-scrollbar
+            width: 0 !important
+        .error &
+            border-color: #FF4E4E
+            color: #FF4E4E
+            .vc-body--bow &
+                color: var(--vc-secondary)
+            .vc-body--wob &
+                color: var(--vc-secondary)
+            //.vc-body--yob &
+                color: $yellow
+        .vc-record-form__select--animating &
+            z-index: 100
+        .vc-record-form__select--open &
+            max-height: 295px
+            z-index: 130
+        //.vc-record-form__select--border &
+            border: 1px solid rgba(0, 0, 0, 0.1)
+        .vc-body--bow &
+            border-color: var(--vc-black)
+        .vc-body--wob &
+            background-color: var(--vc-black)
+            border-color: var(--vc-white)
+        .vc-body--yob &
+            background-color: var(--vc-blueDark)
+            border-color: var(--vc-yellow)
+    &__select-header
+        //+fprop(42, 48, 414, 1300, height)
+        height: 48px
+        border: 1px solid var(--vc-transparent)
+        border-radius: 6px
+        position: relative
+        background-color: #F5F6FA
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding: 18px 16px 0
+        transition: 0.3s
+    &__select-title
+        opacity: 0
+        transition: 0.3s
+        font-size: 16px
+        font-weight: 400
+        font-style: normal
+        line-height: 1.4
+        color: #9BAAB6
+        white-space: nowrap
+        margin-right: 12px
+        overflow: hidden
+        transition: 0.3s
+        .vc-body--bow &
+            color: var(--vc-black)
+        .vc-body--wob &
+            color: var(--vc-white)
+        .vc-body--yob &
+            color: var(--vc-yellow)
+        .error &
+            color: var(--vc-secondary)
+            .vc-body--bow &
+                color: var(--vc-secondary)
+            .vc-body--wob &
+                color: var(--vc-white)
+            .vc-body--yob &
+                color: var(--vc-yellow)
+            .vc-record-form__select--selected &
+                color: var(--vc-black)
+            .vc-body--wob &
+                color: var(--vc-white)
+            .vc-body--yob &
+                color: var(--vc-yellow)
+    &__select-arrow
+        display: flex
+        width: 14px
+        height: 24px
+        justify-content: center
+        svg
+            transition: 0.3s
+            .vc-record-form__select--open &
+                transform: scaleY(-1)
+            display: block
+            path
+                .vc-body--wob &
+                    fill: var(--vc-black)
+                    stroke: var(--vc-white)
+                .vc-body--yob &
+                    fill: var(--vc-blueDark)
+                    stroke: var(--vc-yellow)
+    &__select-list
+        border-radius: 6px
+        border: 1px solid var(--vc-transparent)
+        box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05)
+        position: relative
+        z-index: 100
+        overflow: hidden
+        height: auto
+        max-height: 0
+        overflow-y: auto
+        transition: 0.3s
+        scrollbar-width: none
+        -ms-overflow-style: none
+        &::-webkit-scrollbar
+            width: 0 !important
+        .vc-record-form__select--open &
+            border: 1px solid #E3E9EF
+            +fprop(251, 247, 414, 1300, max-height)
+        .simplebar-scrollbar.simplebar-visible:before
+            opacity: 0.2
+    &__select-item
+        font-size: 14px
+        font-weight: 400
+        font-style: normal
+        line-height: 1.14
+        color: var(--vc-black)
+        padding: 12px 16px
+        transition: 0.3s
+        &--active
+            color: #0D98FC
+        .vc-body--wob &
+            color: var(--vc-white)
+        .vc-body--yob &
+            color: var(--vc-yellow)
+        &:hover
+            background-color: #E7F5FF
+            //color: var(--vc-white)
+            .vc-body--bow &
+                color: var(--vc-black)
+                background-color: rgba(0, 0, 0, 0.1)
+            .vc-body--wob &
+                color: var(--vc-white)
+                background-color: var(--vc-black)
+                border-color: var(--vc-white)
+            .vc-body--yob &
+                color: var(--vc-yellow)
+                background-color: var(-vc-blue-dark)
+                border-color: var(--vc-yellow)
+    &__datetime
+        display: flex
+        min-width: 268px
+        position: relative
+        +fprop(44, 50, 414, 1300, height)
+        padding-left: 16px
+        padding-right: 16px
+        width: 100%
+        background-color: #F5F6FA
+        //border: 1px solid #C6D3DE
+        border-radius: 6px
+        transition: 0.3s
+        //&:not(:last-child)
+            +fprop(8, 12, 414, 1300, margin-bottom)
+        .vc-modal &
+            height: 48px
+            width: auto
+            flex-grow: 1
+        &.error
+            border-color: #FF4E4E
+            color: #FF4E4E
+        &:hover
+            svg
+                path
+                    stroke: var(--vc-primary)
+                    .vc-body--bow &
+                        stroke: var(--vc-black)
+                    .vc-body--wob &
+                        stroke: var(--vc-white)
+                    .vc-body--yob &
+                        stroke: var(--vc-yellow)
+        .vc-body--bow &
+            border-color: var(--vc-black)
+        .vc-body--wob &
+            background-color: var(--vc-black)
+        .vc-body--yob &
+            background-color: var(--vc-blue-dark)
+            border-color: var(--vc-yellow)
+    &__datetime-input
+        padding-right: 30px
+        width: 100%
+        text-overflow: ellipsis
+        z-index: 10
+        +fprop(12, 16, 414, 1300, padding-top)
+        +fprop(12, 16, 414, 1300, padding-bottom)
+        overflow: hidden
+        white-space: nowrap
+        transition: 0.3s
+        &::placeholder
+            color: #788D98
+            font-size: 15px
+            .vc-body--bow &
+                color: var(--vc-black)
+            .vc-body--wob &
+                color: var(--vc-white)
+            .vc-body--yob &
+                color: var(--vc-yellow)
+        .error &
+            &::placeholder
+                color: var(--vc-secondary)
+                .vc-body--bow &
+                    color: var(--vc-secondary)
+                //.vc-body--yow &
+                    color: var(--vc-secondary)
+            .vc-body--wob &
+                color: var(--vc-secondary)
+            //.vc-body--yob &
+                color: var(--vc-secondary)
+    &__datetime-icon
+        position: absolute
+        top: 50%
+        //+fprop(20, 24, 414, 1300, right)
+        right: 16px
+        display: flex
+        width: 24px
+        height: 24px
+        align-items: center
+        justify-content: center
+        transform: translateY(-50%)
+        margin-left: 24px
+        svg
+            display: block
+            path
+                transition: 0.3s
+                .vc-body--bow &
+                    fill: var(--vc-white)
+                    stroke: var(--vc-black)
+                .vc-body--wob &
+                    fill: var(--vc-black)
+                    stroke: var(--vc-white)
+                .vc-body--yob &
+                    fill: var(--vc-blue-dark)
+                    stroke: var(--vc-yellow)
+    &__submit-wrapper
+        .vc-modal__container &
+            grid-column-start: 1
+            grid-column-end: 3
+            +fprop(16, 24, 414, 1300, margin-top)
+            flex-direction: row
+            flex-wrap: nowrap
+            width: 100%
+            +fprop(10, 28, 414, 1300, gap)
+            @media(max-width: 767px)
+                flex-direction: column
+        .vc-btn
+            width: fit-content
+            @media(max-width: 767px)
+                width: 100%
+        +fprop(20, 16, 414, 1300, margin-top)
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        gap: 24px
+    &__checkbox-with-text
+        display: flex
+        gap: 8px
+    &__agreements
+        display: flex
+        flex-direction: column
+        +fprop(12, 16, 414, 1300, gap)
+    &__agreement
+        display: flex
+        gap: 8px
+        .vc-modal__container &
+            align-items: center
+    &__checkbox-wrapper
+        position: relative
+        width: 20px
+        height: 20px
+        border-radius: 6px
+        //border: 1px solid #C6D3DE
+        background-color: var(--vc-white)
+        flex-shrink: 0
+        cursor: pointer
+        .vc-body--wob &
+            background-color: var(--vc-black)
+        .vc-body--yob &
+            background-color: var(--vc-blue-dark)
+    &__checkbox
+        position: absolute
+        //appearance: none
+        opacity: 0
+        //&.vc-record-form__checkbox--gray + .vc-record-form__checkmark
+        //    background-color: rgba(0, 0, 0, 0.05)
+        //    border-color: rgba(0, 0, 0, 0.05)
+            .vc-body--bow &
+                background-color: rgba(0, 0, 0, 0.05)
+                border-color: var(--vc-black)
+            .vc-body--wob &
+                background-color: rgba(0, 0, 0, 0.05)
+                border-color: var(--vc-white)
+            //.vc-body--yob &
+                background-color: rgba(0, 0, 0, 0.05)
+                border-color: $yellow
+        //&.vc-record-form__checkbox--gray:checked + .vc-record-form__checkmark
+        //    background-color: var(--vc-primary)
+        //    border-color: var(--vc-primary)
+            .vc-body--bow &
+                background-color: rgba(0, 0, 0, 0.05)
+                border-color: var(--vc-black)
+            .vc-body--wob &
+                background-color: var(--vc-black)
+                border-color: var(--vc-white)
+            //.vc-body--yob &
+                background-color: $blueDark
+                border-color: $yellow
+        &.error + .vc-record-form__checkmark
+                border-color: #FF4E4E
+                background-color: rgba(244, 76, 81, 0.1)
+        &:checked + .vc-record-form__checkmark
+            background-color: var(--vc-primary)
+            border-color: var(--vc-primary)
+            .vc-body--bow &
+                border-color: var(--vc-black)
+                background-color: var(--vc-white)
+            .vc-body--wob &
+                background-color: var(--vc-black)
+                border-color: var(--vc-white)
+            .vc-body--yob &
+                background-color: var(--vc-blue-dark)
+                border-color: var(--vc-yellow)
+            svg
+                opacity: 1
+                path
+                    .vc-body--bow &
+                        stroke: var(--vc-black)
+                    .vc-body--wob &
+                        stroke: var(--vc-white)
+                    .vc-body--yob &
+                        stroke: var(--vc-yellow)
+        //@media(min-width: 1024px)
+            &:hover + .vc-record-form__checkmark
+                background-color: var(--vc-primary-light)
+                border-color: var(--vc-primary-light)
+                .vc-body--bow &
+                    background-color: var(--vc-black)
+                    border-color: var(--vc-black)
+                .vc-body--wob &
+                    background-color: var(--vc-black)
+                    border-color: var(--vc-white)
+                //.vc-body--yob &
+                    background-color: $blueDark
+                    border-color: $yellow
+    &__checkmark
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        border-radius: 4px
+        display: flex
+        align-items: center
+        justify-content: center
+        background-color: var(--vc-white)
+        border: 1px solid #788D98
+        opacity: 1
+        transition: 0.3s
+        .vc-body--bow &
+            border-color: var(--vc-black)
+        .vc-body--wob &
+            background-color: var(--vc-black)
+            border-color: var(--vc-white)
+        .vc-body--yob &
+            background-color: var(--vc-blue-dark)
+            border-color: var(--vc-yellow)
+        svg
+            display: block
+            opacity: 0
+            transition: 0.3s
+    &__checkbox-text
+        +fprop(14, 18, 414, 1300)
+        font-weight: 400
+        font-style: normal
+        line-height: 1.56
+        color: var(--vc-black)
+        .vc-body--wob &
+            color: var(--vc-white)
+        //.vc-body--yob &
+            color: $yellow
+    &__agreement-text
+        .vc-modal &
+            line-height: 1.28
+        +fprop(12, 13, 414, 1300)
+        font-weight: 400
+        font-style: normal
+        line-height: 1.71
+        color: var(--vc-black)
+        //max-width: 477px
+        .vc-body--wob &
+            color: var(--vc-white)
+        .vc-body--yob &
+            color: var(--vc-yellow)
+        a
+            color: var(--vc-primary)
+            text-decoration: none
+            .vc-body--bow &
+                color: var(--vc-black)
+            .vc-body--wob &
+                color: var(--vc-white)
+            .vc-body--yob &
+                color: var(--vc-yellow)
+            &:visited
+                text-decoration: none
+            &:hover
+                text-decoration: underline
+            &:focus
+                text-decoration: underline
+            &:active
+                text-decoration: none
+    &__error
+        font-size: 14px
+        font-weight: 400
+        font-style: normal
+        line-height: 1.43
+        color: #FF4E4E
+        margin-top: 6px
+    &__success
+        @extend .vc-record-form__container
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 50
+        width: 100%
+        height: 100%
+        background-color: #f0f0f0
+        .vc-body--bow &
+            background-color: var(--vc-white)
+            border-color: var(--vc-black)
+        .vc-body--wob &
+            background-color: var(--vc-black)
+            border-color: var(--vc-white)
+        .vc-body--yob &
+            background-color: var(--vc-blue-dark)
+            border-color: var(--vc-yellow)
+        &--br0
+            border-radius: 0
+    &__success-icon
+        +fprop(24, 32, 414, 1300, width)
+        display: flex
+        svg
+            display: block
+            width: 100%
+    &__success-title
+        @extend .vc-record-form__title
+        margin-top: 16px
+        max-width: 640px
+    &__success-subtitle
+        @extend .vc-record-form__subtitle
+        +fprop(8, 16, 414, 1300, margin-top)
+        max-width: 640px
+    &__score
+        +fprop(12, 8, 414, 1300, margin-bottom)
+        display: flex
+        flex-direction: row-reverse
+        justify-content: flex-end
+        gap: 8px
+    &__star
+        //+fprop(44, 48, 414, 1300, width)
+        //+fprop(44, 48, 414, 1300, height)
+        width: 48px
+        height: 48px
+        border: 1px solid #E3E9EF
+        //display: flex
+        //align-items: center
+        //justify-content: center
+        background-color: var(--vc-white)
+        border-radius: 8px
+        cursor: pointer
+        text-align: center
+        .vc-body--wob &
+            border: 1px solid var(--vc-white)
+            background-color: var(--vc-black)
+        .vc-body--yob &
+            border: 1px solid var(--vc-yellow)
+            background-color: var(--vc-blue-dark)
+        svg
+            height: 100%
+            path
+                fill: rgba(0, 0, 0, 0)
+                //transition: 0.3s
+                .vc-body--bow &
+                    fill: var(--vc-black)
+                .vc-body--wob &
+                    fill: var(--vc-black)
+                    stroke: var(--vc-white)
+                    stroke-opacity: 1
+                .vc-body--yob &
+                    fill: var(--vc-blueDark)
+                    stroke: var(--vc-yellow)
+                    stroke-opacity: 1
+        &:hover
+            svg
+                path
+                    fill: #FED286
+                    stroke: #FED286
+                    .vc-body--bow &
+                        fill: var(--vc-black)
+                        stroke: var(--vc-black)
+                    .vc-body--wob &
+                        fill: var(--vc-white)
+                        stroke: var(--vc-white)
+                    .vc-body--yob &
+                        fill: var(--vc-yellow)
+                        stroke: var(--vc-yellow)
+            & ~ .vc-record-form__star
+                svg
+                    path
+                        fill: #FED286
+                        stroke: #FED286
+                        .vc-body--bow &
+                            fill: var(--vc-black)
+                            stroke: var(--vc-black)
+                        .vc-body--wob &
+                            fill: var(--vc-white)
+                            stroke: var(--vc-white)
+                        .vc-body--yob &
+                            fill: var(--vc-yellow)
+                            stroke: var(--vc-yellow)
+        &--active
+            svg
+                path
+                    fill: #FED286
+                    stroke: #FED286
+                    .vc-body--bow &
+                        fill: var(--vc-black)
+                        stroke: var(--vc-black)
+                    .vc-body--wob &
+                        fill: var(--vc-white)
+                        stroke: var(--vc-white)
+                    //.vc-body--yob &
+                        fill: $yellow
+                        stroke: $yellow
+            & ~ .vc-record-form__star
+                svg
+                    path
+                        fill: #FED286
+                        stroke: #FED286
+                        .vc-body--bow &
+                            fill: var(--vc-black)
+                            stroke: var(--vc-black)
+                        .vc-body--wob &
+                            fill: var(--vc-white)
+                            stroke: var(--vc-white)
+                        //.vc-body--yob &
+                            fill: $yellow
+                            stroke: $yellow
+    &__star-input
+        opacity: 0
+        display: none
+    &__file-wrapper
+        display: flex
+        width: 100%
+        +fprop(18, 32, 414, 1300, margin-top)
+    &__file
+        position: relative
+        padding: 10px 24px
+        height: 40px
+        max-width: 224px
+        //&:not(:first-child)
+            +fprop(12, 16, 414, 1300, margin-top)
+        //&:not(:last-child)
+            +fprop(8, 12, 414, 1300, margin-bottom)
+        background-color: var(--vc-white)
+        border-radius: 6px
+        border:    1px solid var(--vc-primary)
+        overflow: hidden
+        display: flex
+        align-items: center
+        justify-content: space-between
+        cursor: pointer
+        .vc-body--wob &
+            background-color: var(--vc-black)
+        .vc-body--yob &
+            background-color: var(--vc-blueDark)
+        &:hover
+            svg path
+                stroke: var(--vc-primary)
+                .vc-body--wob &
+                    stroke: var(--vc-white)
+                .vc-body--yob &
+                    stroke: var(--vc-yellow)
+        @media(max-width: 767px)
+            max-width: unset
+            justify-content: center
+    &__file-input
+        position: absolute
+        opacity: 0
+        //appearance: none
+    &__file-placeholder
+        height: 100%
+        display: flex
+        align-items: center
+        font-size: 14px
+        font-style: normal
+        font-weight: 400
+        line-height: 1.5
+        margin-right: 8px
+        color: var(--vc-primary)
+        .vc-body--bow &
+            color: var(--vc-black)
+        .vc-body--wob &
+            color: var(--vc-white)
+        .vc-body--yob &
+            color: var(--vc-yellow)
+    &__file-icon
+        display: block
+        svg
+            display: block
+            path
+                transition: 0.3s
+                stroke: var(--vc-primary)
+    &__file-list
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 10
+        width: 100%
+        height: 100%
+        overflow-y: auto
+        display: flex
+        align-items: center
+        gap: 10px
+        //padding: 0 6px
+        scrollbar-width: none
+        -ms-overflow-style: none
+        &::-webkit-scrollbar 
+            width: 0 !important
+        &:has(.vc-record-form__file-item)
+            background-color: var(--vc-white)
+            .vc-body--wob &
+                background-color: var(--vc-black)
+            .vc-body--yob &
+                background-color: var(--vc-blueDark)
+    &__file-item
+        padding: 6px 16px
+        border-radius: 32px
+        border: 1px solid rgba(0, 0, 0, 0.1)
+        .vc-body--bow &
+            border-color: var(--vc-black)
+        .vc-body--yow &
+            border-color: var(--vc-yellow)
+    &__file-name
+        font-size: 14px
+        font-weight: 400
+        font-style: normal
+        line-height: 1.43
+        color: var(--vc-black)
+        white-space: nowrap
+        .vc-body--wob &
+            color: var(--vc-white)
+        .vc-body--yob &
+            color: var(--vc-yellow)
+    &__message
+        font-size: 22px
+        font-style: normal
+        font-weight: 400
+        line-height: 1.45
+        color: var(--vc-black)
+        max-width: 503px
+        +fprop(16, 32, 414, 1300, margin-bottom)
+        .vc-body--wob &
+            color: var(--vc-white)
+        .vc-body--yob &
+            color: var(--vc-yellow)
+    &__section-title
+        color: var(--vc-black)
+        +fprop(15, 16, 414, 1300)
+        font-style: normal
+        font-weight: 500
+        line-height: 1.4
+        margin-bottom: 16px
+        display: block
+        width: 100%
+    &__info-wrapper
+        display: flex
+        align-items: center
+        width: 100%
+        gap: 6px
+        //+fprop(18, 32, 414, 1300, margin-bottom)
+    &__info-icon
+        svg
+            display: block
+    &__info-text
+        color: #788D98
+        font-size: 14px
+        font-style: normal
+        font-weight: 400
+        line-height: 1.4
+    &__text
+        color: var(--vc-black)
+        font-size: 14px
+        font-style: normal
+        font-weight: 400
+        line-height: 1

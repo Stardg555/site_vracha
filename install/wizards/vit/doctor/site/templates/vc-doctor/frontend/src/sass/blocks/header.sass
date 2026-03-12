@@ -1,0 +1,89 @@
+$headerBreakPoint: 1279px
+$headerHeight: 80px
+$headerHeightMob: 60px
+
+.vc-header
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 900
+    width: 100%
+    transition: 0.3s
+    &--scroll
+        background-color: var(--vc-white)
+        border-bottom: 1px solid rgba(0, 0, 0, .05)
+    @media(max-width: $headerBreakPoint)
+        background-color: var(--vc-white)
+    div[id^="bx_incl_area"]
+        width: 100%
+        height: 100%
+    &__content
+        display: flex
+        align-items: center
+        justify-content: space-between
+        height: $headerHeight
+        @media(max-width: $headerBreakPoint)
+            height: $headerHeightMob
+    &__burger
+        position: relative
+        width: 36px
+        height: 36px
+        z-index: 10
+        cursor: pointer
+        display: none // flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        gap: 4px
+        @media(max-width: $headerBreakPoint)
+            display: flex
+    &__burger-line
+        width: 18px
+        height: 2px
+        background-color: #788d98
+        transition: 0.3s
+        &:nth-child(1)
+            .vc-header--menu-open &
+                transform: translateY(6px) rotate(135deg)
+        &:nth-child(2)
+            .vc-header--menu-open &
+                opacity: 0
+        &:nth-child(3)
+            .vc-header--menu-open &
+                transform: translateY(-6px) rotate(-135deg)
+    &__logo
+        svg
+            display: block
+    &__logo-img
+        display: block
+        +fprop(30, 40, 414, 1300, height)
+        width: auto
+    &__menu
+        @media(max-width: $headerBreakPoint)
+            position: fixed
+            top: 0
+            left: 0
+            width: 100vw
+            height: 100vh
+            background-color: var(--vc-white)
+            padding: 76px 32px 144px
+            transform: translateX(100%)
+            transition: 0.3s
+            .vc-header--menu-open &
+                transform: translateX(0)
+    &__record
+        @media(max-width: $headerBreakPoint)
+            display: none
+            position: fixed
+            top: auto
+            bottom: 0
+            left: 0
+            width: 100%
+            padding: 12px 10px
+            //display: flex
+            align-items: center
+            justify-content: center
+            background-color: rgba(255, 255, 255, 0.50)
+            .vc-btn
+                width: 100%
+                max-width: 370px

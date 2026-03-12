@@ -1,0 +1,55 @@
+.vc-section
+    +fprop(32, 40, 414, 1300, padding-top)
+    +fprop(32, 40, 414, 1300, padding-bottom)
+    & ~ .vc-section
+        +fprop(24, 40, 414, 1300, padding-top)
+        +fprop(24, 40, 414, 1300, padding-bottom)
+        &--p32
+            +fprop(32, 40, 414, 1300, padding-top)
+            +fprop(32, 40, 414, 1300, padding-bottom)
+    &__header
+        display: flex
+        align-items: center
+        +fprop(24, 36, 414, 1300, margin-bottom)
+    &__header-link
+        margin-left: 24px
+    &__title-wrapper
+        display: flex
+        justify-content: space-between
+        align-items: center
+        width: 100%
+    &__title
+        +fprop(24, 32, 414, 1300)
+        font-style: normal
+        font-weight: 600
+        line-height: 1.4
+        color: var(--vc-black)
+    &__title + .vc-btn
+        flex-shrink: 0
+        margin-left: 32px
+        border-radius: 12px
+        svg
+            margin: 0
+    &__subtitle-wrapper
+        //
+    &__subtitle
+        +fprop(14, 16, 414, 1300)
+        font-weight: 400
+        font-style: normal
+        line-height: 1.57
+        color: #444444FF
+        +fprop(12, 16, 414, 1300, margin-top)
+        max-width: 840px
+        .vc-main-doctors--fourth-variant &
+            color: #788D98
+        .vc-body--bow &
+            color: var(--vc-black)
+        .vc-body--wob &
+            color: var(--vc-white)
+        //.vc-body--yob &
+        //    color: $yellow
+    &__subtitle-link
+        display: none
+        @media(max-width: 767px)
+            display: block
+            margin-top: 24px

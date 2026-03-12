@@ -1,0 +1,460 @@
+.vc-confirmation
+    padding: 24px
+    border-radius: 24px
+    border: 1px solid #E3E9EF
+    @media(max-width: $headerBreakPoint)
+        padding: 0
+        border: unset
+    //margin-top: 140px
+    //@media(max-width: $headerBreakPoint)
+    //    margin-top: 60px
+    &__header
+        color: var(--vc-black)
+        font-size: 16px
+        font-style: normal
+        font-weight: 500
+        line-height: 1.4
+        +fprop(18, 20, 414, 1300, margin-bottom)
+        //+fprop(24, 48, 414, 1300, padding-top)
+        //+fprop(24, 48, 414, 1300, padding-bottom)
+        //background-color: #f5f6fa
+        //@media(max-width: 767px)
+            background-color: unset
+    &__footer
+        margin-top: 24px
+        display: flex
+        align-items: center
+        justify-content: space-between
+        +fprop(24, 32, 414, 1300, gap)
+        @media(max-width: $headerBreakPoint)
+            flex-direction: column
+            align-items: flex-start
+            margin-top: 32px
+    &__btn
+        display: flex
+        flex-shrink: 0
+        @media(max-width: $headerBreakPoint)
+            width: 100%
+            .vc-btn
+                width: 100%
+    &__title
+        +fprop(18, 36, 414, 1300)
+        font-style: normal
+        font-weight: 400
+        line-height: 1.33
+        color: #41404d
+        text-align: center
+    &__main
+        max-width: 752px
+        padding: 0 16px
+        margin: 0 auto
+        margin-top: 32px
+        @media(max-width: 767px)
+            margin-top: 0
+    &__info
+        border-radius: 16px
+        border: 1px solid #e3e9ef
+        box-shadow: 0px 4px 12px 6px rgba(0, 0, 0, 0.05)
+        padding-top: 16px
+        +fprop(16, 20, 414, 1300, padding-right)
+        padding-bottom: 16px
+        +fprop(16, 20, 414, 1300, padding-left)
+    &__doctor
+        display: flex
+        align-items: flex-start
+    &__doctor-image
+        +fprop(80, 100, 414, 1300, width)
+        +fprop(80, 100, 414, 1300, height)
+        overflow: hidden
+        border-radius: 18px
+        flex-shrink: 0
+        +fprop(16, 24, 414, 1300, margin-right)
+    &__doctor-image-img
+        display: block
+        width: inherit
+        height: auto
+        object-fit: cover
+    &__doctor-info
+        flex-grow: 1
+    &__doctor-title
+        +fprop(12, 13, 414, 1300)
+        font-style: normal
+        font-weight: 400
+        line-height: 1.38
+        color: #788d98
+    &__doctor-subtitle
+        +fprop(15, 18, 414, 1300)
+        font-style: normal
+        font-weight: 500
+        line-height: 1.4
+        color: #41404d
+        margin-top: 4px
+    &__doctor-tags
+        display: flex
+        flex-wrap: wrap
+        gap: 8px
+        +fprop(8, 12, 414, 1300, margin-top)
+    &__doctor-tag
+        border-radius: 4px
+        background-color: #d4fceb
+        +fprop(4, 6, 414, 1300, padding-top)
+        padding-right: 6px
+        +fprop(4, 6, 414, 1300, padding-bottom)
+        padding-left: 6px
+        +fprop(11, 12, 414, 1300)
+        font-style: normal
+        font-weight: 500
+        line-height: 1.4
+        color: #41404d
+    &__doctor-text
+        +fprop(12, 13, 414, 1300)
+        font-style: normal
+        font-weight: 400
+        line-height: 1.4
+        color: #788d98
+        +fprop(8, 12, 414, 1300, margin-top)
+    &__service
+        margin-top: 24px
+        @media(max-width: 767px)
+            margin-top: 16px
+            border-top: 1px solid #e3e9ef
+            padding-top: 16px
+    &__service-title
+        font-size: 13px
+        font-style: normal
+        font-weight: 400
+        line-height: 1.2
+        color: #788d98
+    &__service-text
+        font-size: 14px
+        font-style: normal
+        font-weight: 500
+        line-height: 1.2
+        color: #3c3c3b
+        +fprop(6, 8, 414, 1300, margin-top)
+    &__visit
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-gap: 15px
+        margin-top: 16px
+        padding-top: 16px
+        border-top: 1px solid #e3e9ef
+        @media(max-width: 767px)
+            grid-template-columns: 1fr
+            border: none
+            margin-top: 15px
+            padding-top: 0
+    &__visit-info
+        display: block
+        @media(max-width: 767px)
+            display: none
+        &.vc-confirmation__visit-info--mob
+            display: none
+            @media(max-width: 767px)
+                display: block
+    &__visit-item
+        display: flex
+        flex-direction: column
+        justify-content: center
+    &__visit-item-title
+        font-size: 13px
+        font-style: normal
+        font-weight: 400
+        line-height: 1.2
+        color: #788d98
+    &__visit-item-text
+        font-size: 14px
+        font-style: normal
+        font-weight: 500
+        line-height: 1.2
+        color: #41404d
+        margin-top: 8px
+        @media(max-width: 767px)
+            margin-top: 6px
+    &__section
+        +fprop(32, 36, 414, 1300, margin-top)
+    &__section-title
+        font-size: 16px
+        font-style: normal
+        font-weight: 500
+        line-height: 1.4
+        color: #41404d
+    &__section-subtitle
+        font-size: 13px
+        font-style: normal
+        font-weight: 400
+        line-height: 1.4
+        color: #788d98
+        margin-top: 6px
+    &__section-content
+        margin-top: 16px
+    &__payments
+        margin-top: 24px
+        display: flex
+        gap: 32px
+    &__radio-wrapper
+        display: flex
+        align-items: center
+        cursor: pointer
+    &__radio
+        position: relative
+        width: 20px
+        height: 20px
+        border-radius: 50%
+        border: 2px solid #788d98
+        margin-right: 12px
+        display: flex
+        align-items: center
+        justify-content: center
+        transition: 0.3s
+        &::after
+            content: ''
+            width: 8px
+            height: 8px
+            border-radius: 50%
+            background-color: #41404d
+            opacity: 0
+            transition: 0.3s
+        &:has(:checked)
+            border-color: var(--vc-primary)
+            &::after
+                opacity: 1
+    &__radio-input
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        opacity: 0
+        appearance: none
+    &__radio-title
+        font-size: 14px
+        font-style: normal
+        font-weight: 400
+        line-height: 1.28
+        color: #41404d
+    &__inputs
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr 1fr
+        +fprop(12, 16, 414, 1300, grid-gap)
+        @media(max-width: 1023px)
+            grid-template-columns: 1fr 1fr
+        @media(max-width: 767px)
+            grid-template-columns: 1fr
+    &__input-container
+        display: flex
+        flex-direction: column
+    &__input-wrapper
+        position: relative
+    &__input
+        border-radius: 6px
+        border: 1px solid #f5f6fa
+        background-color: #f5f6fa
+        padding: 18px 16px 0
+        width: 100%
+        height: 50px
+        font-size: 15px
+        font-style: normal
+        font-weight: 400
+        line-height: 1
+        color: #41404d
+        transition: 0.3s
+        &::placeholder
+            opacity: 0
+            background-color: var(--vc-transparent)
+            transition: 0.3s
+        &:not(:placeholder-shown)
+            background-color: var(--vc-white)
+            border-color: #c6d3de
+            & + .vc-confirmation__input-ph
+                top: 15px
+                font-size: 12px
+        &:focus
+            background-color: var(--vc-white)
+            border-color: var(--vc-primary)
+            & + .vc-confirmation__input-ph
+                top: 15px
+                font-size: 12px
+            &::placeholder
+                opacity: 1
+        &.vc-error
+            color: #ed6c6c
+            border-color: #ed6c6c
+    &__input-ph
+        position: absolute
+        top: 50%
+        left: 16px
+        overflow: hidden
+        font-size: 15px
+        font-style: normal
+        font-weight: 400
+        line-height: 1
+        color: #788d98
+        transform: translateY(-50%)
+        transition: 0.3s
+        pointer-events: none
+    &__input-subtitle
+        font-size: 14px
+        font-style: normal
+        font-weight: 400
+        line-height: 1.4
+        color: #9aa2b3
+        margin-top: 16px
+    &__input-link
+        font-size: 13px
+        font-style: normal
+        font-weight: 400
+        line-height: 1.4
+        color: #0094f5
+        cursor: pointer
+    &__agreement
+        //+fprop(32, 24, 414, 1300, margin-top)
+    &__checkbox-wrapper
+        display: flex
+        align-items: center
+        &:not(:first-child)
+            margin-top: 16px
+        @media(max-width: 500px)
+            align-items: flex-start
+    &__checkbox
+        position: relative
+        width: 20px
+        height: 20px
+        border-radius: 4px
+        border: 1px solid #788d98
+        flex-shrink: 0
+        margin-right: 8px
+        display: flex
+        align-items: center
+        justify-content: center
+        cursor: pointer
+        svg
+            display: block
+            opacity: 0
+            transition: 0.3s
+        &:has(:checked)
+            border-color: var(--vc-primary)
+            background-color: var(--vc-primary)
+            svg
+                opacity: 1
+        &.vc-error
+            border-color: #ed6c6c
+    &__checkbox-input
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        opacity: 0
+        appearance: none
+    &__checkbox-text
+        +fprop(12, 13, 414, 1300)
+        font-style: normal
+        font-weight: 400
+        line-height: 1.5
+        color: #41404d
+        a
+            color: var(--vc-primary)
+    &__submit
+        margin-top: 36px
+        display: flex
+        .vc-btn
+            border-radius: 8px
+            text-transform: initial
+            height: 48px
+            @media(max-width: 767px)
+                width: 100%
+    &__auth
+        border-radius: 8px
+        background-color: rgba(0, 148, 245, 0.05)
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 16px
+        padding-top: 16px
+        +fprop(12, 16, 414, 1300, padding-right)
+        padding-bottom: 16px
+        +fprop(12, 16, 414, 1300, padding-left)
+        +fprop(32, 36, 414, 1300, margin-top)
+        font-size: 13px
+        font-style: normal
+        font-weight: 400
+        line-height: 1.4
+        color: #788d98
+    &__auth-link
+        color: #0094f5
+        font-style: normal
+        font-weight: 500
+        text-decoration-line: underline
+        text-decoration-style: solid
+        text-decoration-skip-ink: none
+        text-decoration-thickness: 2%
+        text-underline-offset: auto
+        text-underline-position: from-font
+    &__send-code
+        display: flex
+        align-items: center
+        font-size: 14px
+        font-style: normal
+        font-weight: 500
+        line-height: 1.4
+        color: #0094f5
+        text-decoration-line: underline
+        text-decoration-style: solid
+        text-decoration-skip-ink: none
+        text-decoration-thickness: 2%
+        text-underline-offset: auto
+        text-underline-position: from-font
+        cursor: pointer
+    &__code-verified
+        display: flex
+        align-items: center
+    &__code-verified-icon
+        display: block
+    &__code-verified-text
+        font-size: 14px
+        font-style: normal
+        font-weight: 400
+        line-height: 1.4
+        color: #9aa2b3
+        margin-left: 8px
+    &__reminder
+        +fprop(32, 36, 414, 1300, margin-top)
+        margin-bottom: 12px
+    &__reminder-item
+        display: flex
+        align-items: center
+        margin-top: 6px
+    &__reminder-icon
+        margin-right: 10px
+        svg
+            display: block
+    &__reminder-text
+        font-size: 13px
+        font-style: normal
+        font-weight: 400
+        line-height: 1.4
+        color: #788d98
+    &__payment-icons
+        margin-left: auto
+        display: flex
+        align-items: center
+        &--mob
+            display: none
+        @media(max-width: 767px)
+            display: none
+            &--mob
+                display: flex
+                margin-top: 24px
+    &__payment-icon
+        width: 72px
+        height: 40px
+        border-radius: 8px
+        border: 1px solid #e3e9ef
+        display: flex
+        align-items: center
+        justify-content: center
+        svg
+            display: block
+        &:not(:first-child)
+            margin-left: 12px

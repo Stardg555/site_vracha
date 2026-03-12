@@ -1,0 +1,98 @@
+$headerBreakPoint: 1279px
+
+.vc-menu
+    display: flex
+    align-items: center
+    justify-content: space-between
+    +fprop(36, 44, 1380, 1600, gap)
+    @media(max-width: $headerBreakPoint)
+        flex-direction: column
+        align-items: flex-start
+        width: 100%
+    &__item
+        position: relative
+        text-decoration: none
+        color: var(--vc-black)
+        cursor: pointer
+        .vc-header--menu-open &
+            color: var(--vc-black)
+        &:visited
+            text-decoration: none
+            color: var(--vc-black)
+        &:hover
+            @media(min-width: $headerBreakPoint)
+                .vc-menu__item-title
+                    color: var(--vc-primary)
+        &:focus
+            text-decoration: none
+            color: var(--vc-primary)
+        &:active
+            text-decoration: none
+            color: var(--vc-black)
+        @media(max-width: $headerBreakPoint)
+            position: static
+            width: 100%
+    &__item-header
+        display: flex
+        align-items: center
+        gap: 10px
+        @media(max-width: $headerBreakPoint)
+            justify-content: space-between
+    &__item-title-wrapper
+        display: none
+        align-items: center
+        height: 60px
+        padding: 12px 24px
+        margin-bottom: 12px
+        background-color: #cfebff
+        .vc-menu__item-title
+            font-weight: 500
+        @media(max-width: $headerBreakPoint)
+            display: flex
+    &__item-title
+        font-size: 15px
+        font-style: normal
+        font-weight: 500
+        line-height: 1.41
+        color: inherit
+        white-space: nowrap
+        transition: 0.3s
+        @media(max-width: $headerBreakPoint)
+            flex-grow: 1
+            font-weight: 400
+            font-size: 18px
+    &__link
+        display: flex
+        align-items: flex-start
+        text-decoration: none
+        white-space: nowrap
+        color: var(--vc-black)
+        cursor: pointer
+        transition: 0.3s
+        padding: 12px 16px
+        font-size: 14px
+        font-style: normal
+        font-weight: 400
+        line-height: 1.14
+        &:visited
+            text-decoration: none
+            color: var(--vc-black)
+        &:hover
+            text-decoration: none
+            background-color: #F2F0FD
+            color: var(--vc-primary)
+            @media(max-width: $headerBreakPoint)
+                background-color: unset
+        &:focus
+            text-decoration: none
+            color: var(--vc-primary)
+        &:active
+            text-decoration: none
+            color: var(--vc-black)
+        @media(max-width: $headerBreakPoint)
+            margin: 0 24px 0 74px
+            padding: 16px 0
+            &:not(:last-child)
+                    border-bottom: 1px solid rgba(198, 211, 222, 0.30)
+        @media(max-width: 831px)
+            margin: 0 24px

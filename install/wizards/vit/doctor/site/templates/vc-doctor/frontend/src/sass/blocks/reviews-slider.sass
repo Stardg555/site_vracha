@@ -1,0 +1,453 @@
+.vc-reviews-slider
+    position: relative
+    padding: 0 24px
+    margin-left: -24px
+    margin-right: -24px
+    .vc-reviews-slider__item
+        height: auto
+    &:hover
+        .vc-reviews-slider__nav
+            opacity: 1
+    &__container
+        user-select: none
+    &__nav
+        position: absolute
+        top: 40%
+        left: 0
+        z-index: 10
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: space-between
+        pointer-events: none
+        opacity: 0
+        transition: 0.3s
+        @media(max-width: 1023px)
+            display: none
+    &__arrow
+        border-radius: 50%
+        background-color: var(--vc-white)
+        width: 62px
+        height: 62px
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05)
+        display: flex
+        align-items: center
+        justify-content: center
+        pointer-events: all
+        cursor: pointer
+        transition: 0.3s
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05)
+        svg
+            display: block
+        &--left
+            svg
+                transform: scaleX(-1)
+        &:hover
+            background: #C8C3F5
+    &__item
+            flex-direction: column
+            border-radius: 32px
+            position: relative
+            background-color: #F5FBFF
+            border: 1px solid #CFEBFF
+            min-height: 300px
+            padding-top: 24px
+            padding-bottom: 24px
+            +fprop(16, 24, 414, 1300, padding-right)
+            +fprop(16, 24, 414, 1300, padding-left)
+            @media(max-width: 767px)
+                border-radius: 24px
+    &__item-pre-text
+        z-index: 5
+        margin-bottom: 14px
+        position: relative
+        color: var(--vc-black)
+        +fprop(16, 18, 414, 1300)
+        font-style: normal
+        font-weight: 400
+        line-height: 1.4
+    &__item-info-wrapper
+        display: flex
+        +fprop(16, 32, 414, 1300, gap)
+        align-items: center
+        height: 100%
+        flex-grow: 1
+        @media(max-width: 767px)
+            flex-direction: column
+            align-items: flex-start
+    &__item-header-wrapper
+        display: flex
+        +fprop(16, 20, 414, 1300, gap)
+    &__item-content
+        position: relative
+        display: flex
+        height: 100%
+        flex-direction: column
+        @media(max-width: 1023px)
+            padding-left: unset
+    &__item-header
+        padding: 12px 5px
+        display: flex
+        align-items: center
+        @media(max-width: 767px)
+            padding: 0 4px
+            align-items: flex-start
+    &__item-image
+        flex-shrink: 0
+        overflow: hidden
+        position: relative
+        margin-right: 16px
+        border-radius: 100px
+        width: 64px
+        height: 64px
+        min-height: unset
+    &__item-image-img
+        position: absolute
+        width: 100%
+        height: 100%
+        object-position: center
+        object-fit: cover
+    &__item-title
+        color: var(--vc-black)
+        +fprop(13, 14, 414, 1300)
+        word-spacing: unset
+        font-style: normal
+        font-weight: 400
+        line-height: 1
+    &__item-subtitle
+        color: var(--vc-black)
+        +fprop(13, 14, 414, 1300)
+        font-style: normal
+        font-weight: 400
+        line-height: 1.2
+    &__item-quote
+        color: #8E959B
+        text-overflow: ellipsis
+        white-space: nowrap
+        +fprop(120, 150, 414, 1300)
+        font-style: normal
+        font-weight: 400
+        line-height: normal
+        @media(max-width: 767px)
+            max-height: 40px
+    &__item-stars
+        gap: 4px
+        margin-left: 16px
+        display: flex
+        align-items: center
+        @media(max-width: 767px)
+            margin-left: 8px
+    &__item-date
+        color: #788D98
+        +fprop(12, 14, 414, 1300)
+        font-style: normal
+        font-weight: 400
+        line-height: 1
+    &__item-main-wrapper
+        display: flex
+        gap: 16px
+        flex-grow: 1
+        .vc-reviews-slider__item-main
+            flex: 0 1 400px
+            @media(max-width: 767px)
+                flex: 1 1 auto
+        @media(max-width: 767px)
+            flex-direction: column
+    &__item-card
+        padding: 16px 0
+        display: flex
+        flex: 0 8 180px
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        gap: 12px
+        @media(max-width: 767px)
+            flex-direction: row
+            align-items: inherit
+            padding: 12px 0 0 0
+            flex: 0 1 auto
+            justify-content: inherit
+    &__item-card-image
+        border-radius: 12px
+        +fprop(48, 64, 414, 1300, width)
+        +fprop(48, 64, 414, 1300, height)
+    &__item-card-image-img
+        display: block
+        width: 100%
+        height: 100%
+    &__item-card-title
+        color: var(--vc-black)
+        text-align: center
+        +fprop(13, 14, 414, 1300)
+        font-style: normal
+        font-weight: 500
+        line-height: 1.4
+        @media(max-width: 767px)
+            text-align: inherit
+    &__item-card-subtitle
+        color: #788D98
+        text-align: center
+        margin-top: 4px
+        +fprop(12, 13, 414, 1300)
+        font-style: normal
+        font-weight: 400
+        line-height: 1.38
+        @media(max-width: 767px)
+            text-align: inherit
+    &__item-card-icon
+        display: flex
+        background-color: var(--vc-white)
+        border-radius: 100px
+        justify-content: center
+        align-items: center
+        padding: 6px
+        width: 36px
+        height: 36px
+        @media(max-width: 767px)
+            margin-left: auto
+            align-self: center
+        svg
+            display: block
+    &__item-main
+        &:before
+            opacity: 0
+            transition: 0.3s
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background-color: var(--vc-white)
+        position: relative
+        display: flex
+        flex-grow: 1
+        flex-direction: column
+        margin-top: 16px
+        transition: 0.3s
+        +fprop(16, 18, 414, 1300, padding-top)
+        +fprop(16, 24, 414, 1300, padding-right)
+        +fprop(16, 18, 414, 1300, padding-bottom)
+        +fprop(16, 24, 414, 1300, padding-left)
+        overflow: hidden
+        border: 1px solid #CFEBFF
+        border-radius: 16px
+        background: var(--vc-white)
+        min-height: 294px
+        @media(max-width: 767px)
+            justify-content: center
+    &__item-more
+        color: var(--vc-primary)
+        margin-top: auto
+        font-size: 16px
+        font-style: normal
+        font-weight: 400
+        line-height: 1.6
+        text-decoration-line: underline
+        text-decoration-style: dotted
+        text-decoration-skip-ink: none
+        text-decoration-thickness: 5%
+        text-underline-offset: 14%
+        text-underline-position: from-font
+    &__item-text
+        color: #788D98
+        +fprop(14, 15, 414, 1300)
+        font-style: normal
+        font-weight: 400
+        flex-grow: 1
+        display: flex
+        flex-direction: column
+        gap: 16px
+        line-height: 1.6
+        z-index: 5
+        position: relative
+    &__item-info
+        display: flex
+        flex-wrap: wrap
+        height: 100%
+        +fprop(8, 16, 414, 1300, gap)
+        align-items: center
+        flex-grow: 1
+    &__item-more-text
+        font-size: 14px
+        font-weight: 400
+        font-style: normal
+        line-height: normal
+        color: var(--vc-primary)
+        cursor: pointer
+        transition: 0.3s
+        margin-right: 6px
+    &__item-more-arrow
+        svg
+            display: block
+            path
+                stroke: var(--vc-primary)
+                transition: 0.3s
+    &__item-footer
+        display: flex
+        align-items: center
+        +fprop(32, 14, 414, 1300, margin-top)
+        @media(max-width: 1023px)
+            flex-direction: column
+            align-items: flex-start
+    &__item-icon
+        flex-shrink: 0
+        svg
+            display: block
+            width: 100%
+    .vc-modal__review-icon
+        svg
+            display: block
+    .vc-modal__review-image
+        width: 64px
+        height: 64px
+        min-height: unset
+    .vc-modal__review-header-wrapper
+        border-radius: 8px
+        border: 1px solid #CFEBFF
+        background: #F5FBFF
+        +fprop(16, 24, 414, 1300, margin-top)
+        padding-right: 16px
+        padding-left: 16px
+        justify-content: space-between
+        +fprop(12, 16, 414, 1300, padding-top)
+        +fprop(12, 16, 414, 1300, padding-bottom)
+        align-items: center
+    .vc-modal__review-body
+        +fprop(18, 24, 414, 1300, margin-top)
+    .vc-modal__review-stars
+        margin: 0
+        flex-shrink: 0
+        svg
+            +fprop(19, 16, 414, 1300, width)
+            +fprop(18, 15, 414, 1300, height)
+    .vc-modal__close
+        svg
+            height: 14px
+    .vc-modal__review-header
+        align-items: center
+        width: auto
+        margin-left: 12px
+        @media(max-width: 767px)
+            margin-left: 8px
+            flex-direction: column
+            align-items: flex-end
+    .vc-modal__container
+        max-width: 720px
+        padding-top: 24px
+        +fprop(16, 32, 414, 1300, padding-right)
+        +fprop(16, 24, 414, 1300, padding-bottom)
+        +fprop(16, 32, 414, 1300, padding-left)
+    .vc-modal__review-title
+        font-weight: 400
+        margin: 0 0 0 32px
+        font-size: 14px
+        font-style: normal
+        line-height: 1
+        @media(max-width: 767px)
+            text-align: right
+            margin: 8px 0 0
+    .vc-modal__review-date
+        color: #788D98
+        +fprop(13, 14, 414, 1300)
+        font-style: normal
+        font-weight: 400
+        line-height: 1
+        margin: 0 0 0 16px
+        @media(max-width: 767px)
+            margin: 8px 0 0
+    .vc-modal__pre-text
+        margin-top: 16px
+        color: var(--vc-black)
+        +fprop(16, 24, 414, 1300)
+        font-style: normal
+        font-weight: 500
+        line-height: 1.4
+        @media(max-width: 767px)
+            font-weight: 400
+    .vc-modal__review-text
+        +fprop(14, 15, 414, 1300)
+        margin-top: 14px
+    .vc-modal__review-btn
+        margin-top: 40px
+        .vc-btn
+            height: 48px
+            border-radius: 8px
+            text-transform: unset
+            min-width: 200px
+            @media(max-width: 767px)
+                width: 100%
+    &__video-wrapper
+        width: 100%
+        height: 100%
+        position: relative
+        @media(max-width: 767px)
+            max-height: 258px
+    &__video
+        position: absolute
+        height: 100%
+        justify-self: center
+        &::before
+            content: ''
+            border-radius: 12px
+            position: absolute
+            width: 100%
+            height: 100%
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%)
+            z-index: 10
+    &__video-vid
+        width: 100%
+        height: 100%
+        border-radius: 12px
+        object-fit: cover
+        object-position: center
+    &__video-controls
+        +fprop(52, 60, 414, 1300, width)
+        +fprop(52, 60, 414, 1300, height)
+        cursor: pointer
+        position: absolute
+        display: flex
+        align-items: center
+        justify-content: center
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        border-radius: 100px
+        overflow: hidden
+        z-index: 20
+        transition: 0.3s
+        &--play
+            .vc-reviews-slider__video-play
+                opacity: 0
+                pointer-events: none
+            .vc-reviews-slider__video-stop
+                opacity: 1
+                pointer-events: all
+        &::before
+            content: ''
+            position: absolute
+            height: 100%
+            width: 100%
+            background: rgba(255, 255, 255, 0.30)
+        @media(min-width: 768px)
+            &:hover
+                .vc-reviews-slider__video-play, .vc-reviews-slider__video-stop
+                    transform: scale(1.25)
+    &__video-play
+        position: absolute
+        width: 40px
+        height: 40px
+        padding: 10px
+        display: flex
+        align-items: center
+        justify-content: center
+        transition: 0.3s
+        border-radius: 100px
+        overflow: hidden
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.00) 100%), var(--vc-primary)
+        svg
+            display: block
+    &__video-stop
+        @extend .vc-reviews-slider__video-play
+        opacity: 0
+        pointer-events: none

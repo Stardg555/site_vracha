@@ -1,0 +1,18 @@
+<?php
+
+$MESS['VD_CATALOGS_TYPE_NAME'] = 'Каталоги';
+$MESS['VD_CATALOGS_ELEMENT_NAME'] = 'Элементы';
+$MESS['VD_CATALOGS_SECTION_NAME'] = 'Разделы';
+$MESS['VD_CONTENT_TYPE_NAME'] = 'Контент';
+$MESS['VD_CONTENT_ELEMENT_NAME'] = 'Элементы';
+$MESS['VD_CONTENT_SECTION_NAME'] = 'Разделы';
+$MESS['VD_EMPLOYEES_TYPE_NAME'] = 'Сотрудники';
+$MESS['VD_EMPLOYEES_ELEMENT_NAME'] = 'Элементы';
+$MESS['VD_EMPLOYEES_SECTION_NAME'] = 'Разделы';
+$MESS['VD_FORMS_TYPE_NAME'] = 'Формы';
+$MESS['VD_FORMS_ELEMENT_NAME'] = 'Элементы';
+$MESS['VD_CONTACTS_TYPE_NAME'] = 'Контакты';
+$MESS['VD_CONTACTS_ELEMENT_NAME'] = 'Элементы';
+$MESS['VD_CONTACTS_SECTION_NAME'] = 'Разделы';
+$MESS['VD_REVIEWS_TYPE_NAME'] = 'Отзывы';
+$MESS['VD_REVIEWS_ELEMENT_NAME'] = 'Элементы';

@@ -1,0 +1,109 @@
+.vc-video
+  video#{'::-webkit-media-controls'}
+    display: none !important
+  video#{'::-webkit-media-controls-start-playback-button'}
+    display: none !important
+  &::before
+    content: ""
+    top: 0
+    left: 0
+    border-radius: 12px
+    position: absolute
+    width: 100%
+    height: 100%
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%)
+    z-index: 10
+  width: 100%
+  position: absolute
+  top: 0
+  left: 0
+  height: 100%
+  &:hover
+    .vc-video__controls
+      &:before
+        opacity: 1
+    .vc-video__stop
+      opacity: 1
+      pointer-events: all
+  &:not(:has(.vc-video__controls--play))
+    .vc-video__controls
+      &:before
+        opacity: 1
+  &__vid
+    width: 100%
+    height: 100%
+    border-radius: 12px
+    object-fit: cover
+    object-position: center
+  &__poster
+    position: relative
+    z-index: 15
+    height: 100%
+    width: 100%
+    display: block
+    transition: 0.3s
+    background: linear-gradient(180deg, #f3faff 0%, #e7f5ff 100%)
+  &__poster-img
+    display: block
+    height: 100%
+    width: auto
+    margin: 0 auto
+  &__play
+    position: absolute
+    z-index: 5
+    width: 40px
+    height: 40px
+    padding: 10px
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: 0.3s
+    border-radius: 100px
+    overflow: hidden
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.00) 100%), var(--vc-primary)
+    svg
+      display: block
+  &__stop
+    @extend .vc-video__play
+    z-index: 0
+    opacity: 0
+    pointer-events: none
+  &__controls
+    +fprop(52, 60, 414, 1300, width)
+    +fprop(52, 60, 414, 1300, height)
+    cursor: pointer
+    position: absolute
+    display: flex
+    align-items: center
+    justify-content: center
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    border-radius: 100px
+    overflow: hidden
+    z-index: 20
+    transition: 0.3s
+    &--play
+      .vc-video__play
+        opacity: 0
+        pointer-events: none
+      .vc-video__stop
+        opacity: 1
+        pointer-events: auto
+        @media(min-width: 768px)
+          opacity: 0
+          pointer-events: none
+    &::before
+      content: ''
+      opacity: 0
+      transition: 0.3s
+      position: absolute
+      height: 100%
+      width: 100%
+      background: rgba(255, 255, 255, 0.30)
+      @media(max-width: 767px)
+        opacity: 1
+    @media(min-width: 768px)
+      &:hover
+        .vc-video__play, .vc-video__stop
+          transform: scale(1.25)

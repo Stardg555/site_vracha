@@ -1,0 +1,68 @@
+.vc-spoilers
+    &__title
+        +fprop(24, 32, 414, 1300)
+        font-style: normal
+        font-weight: 400
+        line-height: 1.5
+        color: var(--vc-black)
+    &__list
+        +fprop(24, 32, 414, 1300, margin-top)
+    &__item
+        display: flex
+        cursor: pointer
+        flex-direction: column
+        overflow: hidden
+        align-items: center
+        transition: 0.3s
+        border-radius: 12px
+        background: #F5F6FA
+        +fprop(16, 18, 414, 1300, padding-top)
+        +fprop(16, 18, 414, 1300, padding-right)
+        +fprop(16, 24, 414, 1300, padding-left)
+        &--open
+            background: #cfebff
+            +fprop(16, 24, 414, 1300, padding-bottom)
+            .vc-spoilers__item-content
+                background: #cfebff
+            .vc-spoilers__item-icon
+                background-color: var(--vc-white)
+                svg
+                    transform: scaleY(-1)
+        &:not(:first-child)
+            margin-top: 12px
+    &__item-header
+        display: flex
+        align-items: center
+        width: 100%
+        +fprop(16, 18, 414, 1300, padding-bottom)
+    &__item-icon
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-shrink: 0
+        width: 28px
+        height: 28px
+        margin-right: 16px
+        overflow: hidden
+        border-radius: 100px
+        background-color: #cfebff
+        svg
+            display: block
+            transition: 0.3s
+    &__item-title
+        color: var(--vc-black)
+        +fprop(16, 18, 414, 1300)
+        font-style: normal
+        font-weight: 500
+        line-height: 1.2
+    &__item-text
+        color: var(--vc-black)
+        font-size: 16px
+        font-style: normal
+        font-weight: 400
+        line-height: 1.4
+    &__item-content
+        height: 0
+        transition: 0.3s
+        background: #F5F6FA
+        width: 100%

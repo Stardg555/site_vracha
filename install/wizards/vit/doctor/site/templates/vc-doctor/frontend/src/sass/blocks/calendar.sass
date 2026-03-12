@@ -1,0 +1,82 @@
+.vc-calendar
+    width: 100%
+    max-width: 422px
+    &--mobile
+        height: 100%
+    &__input
+        appearance: none
+        display: none
+    &__header
+        display: grid
+        grid-template-columns: 32px auto 32px
+        grid-gap: 24px
+    &__arrow
+        width: 32px
+        height: 32px
+        display: flex
+        align-items: center
+        justify-content: center
+        border-radius: 50%
+        background-color: #cfebff
+        cursor: pointer
+        user-select: none
+        svg
+            display: block
+        &:last-child
+            svg
+                transform: scaleX(-1)
+    &__title
+        display: flex
+        align-items: center
+        justify-content: center
+        text-align: center
+        font-size: 15px
+        font-style: normal
+        font-weight: 500
+        line-height: 1
+        color: var(--vc-black)
+    &__main
+        margin-top: 12px
+    &__weekdays
+        display: grid
+        grid-template-columns: repeat(7, 1fr)
+        grid-gap: 8px 12px
+    &__weekday
+        height: 32px
+        display: flex
+        align-items: center
+        justify-content: center
+        font-size: 14px
+        font-style: normal
+        font-weight: 500
+        line-height: 1
+        color: #9aa2b3
+        &--weekend
+            color: var(--vc-primary)
+    &__days
+        @extend .vc-calendar__weekdays
+    &__day
+        height: 40px
+        display: flex
+        align-items: center
+        justify-content: center
+        font-size: 16px
+        font-style: normal
+        font-weight: 400
+        line-height: 1
+        color: #3c3c3b
+        border-radius: 8px
+        background-color: #f5f6fa
+        transition: 0.3s
+        &--available
+            background-color: #cceafd
+            cursor: pointer
+        &--selected
+            background-color: #0094f5
+            color: var(--vc-white)
+        &--inactive
+            background-color: #f5f6fa
+            color: rgba(120, 141, 152, 0.50)
+        &--empty
+            background-color: var(--vc-white)
+            color: var(--vc-white)

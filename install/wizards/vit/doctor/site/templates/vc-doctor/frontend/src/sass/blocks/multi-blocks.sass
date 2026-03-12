@@ -1,0 +1,66 @@
+.vc-multi-blocks
+    &__main
+        display: grid
+        grid-template-columns: 1fr 1fr
+        +fprop(16, 32, 414, 1300, grid-gap)
+        @media(max-width: 767px)
+            grid-template-columns: 1fr
+    &__item
+        display: flex
+        flex-direction: column
+        overflow: hidden
+        border-radius: 24px
+        background: #F5F6FA
+        padding-top: 24px
+        padding-bottom: 24px
+        +fprop(16, 24, 414, 1300, padding-right)
+        +fprop(16, 24, 414, 1300, padding-left)
+        position: relative
+    &__item-header
+        display: flex
+        margin-left: 56px
+        @media(max-width: 767px)
+            margin-left: 0
+            align-items: center
+    &__item-marker
+        position: absolute
+        font-size: 48px
+        width: 32px
+        color: var(--vc-primary)
+        font-style: normal
+        font-weight: 500
+        line-height: 1
+        display: flex
+        justify-content: center
+        top: 24px
+        left: 24px
+        flex-shrink: 0
+        @media(max-width: 767px)
+            position: static
+            margin-right: 10px
+        svg
+            display: block
+    &__item-content
+        margin-left: 56px
+        +fprop(16, 12, 414, 1300, margin-top)
+        @media(max-width: 767px)
+            margin-left: 0
+    &__item-title
+        color: var(--vc-black)
+        font-size: 18px
+        font-style: normal
+        font-weight: 600
+        line-height: 1.6
+        @media(max-width: 767px)
+            line-height: 1.2
+    &__item-text
+        color: var(--vc-black)
+        +fprop(14, 16, 414, 1300)
+        font-style: normal
+        font-weight: 400
+        line-height: 1.6
+        p
+            &:first-child
+                margin-top: 0
+            &:last-child
+                margin-bottom: 0

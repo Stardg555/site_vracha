@@ -1,0 +1,6 @@
+<?php
+
+$MESS['VD_COMPETENCIES_SPECIALIZATION'] = 'Специализация';
+$MESS['VD_COMPETENCIES_SPECIALIZATION_OTHER'] = 'Прочие услуги';
+$MESS['VD_COMPETENCIES_EDUCATION'] = 'Образование';
+$MESS['VD_COMPETENCIES_EXPERIENCE'] = 'Опыт работы';

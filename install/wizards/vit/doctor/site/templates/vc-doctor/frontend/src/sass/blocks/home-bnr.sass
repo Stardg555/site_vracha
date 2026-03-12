@@ -1,0 +1,95 @@
+.vc-home-bnr
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.00) 100%), #CFEBFF
+    padding-top: 80px
+    @media(max-width: 767px)
+        padding-top: 108px
+    &__wrapper
+        display: flex
+        align-items: flex-end
+        justify-content: space-between
+        gap: 64px
+        @media(max-width: 767px)
+            flex-direction: column
+            align-items: stretch
+    &__content
+        max-width: 560px
+        width: 100%
+        height: 640px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        @media(max-width: 767px)
+            height: auto
+            max-width: unset
+    &__title
+        +fprop(32, 40, 414, 1300)
+        font-style: normal
+        font-weight: 600
+        line-height: 1.2
+        color: var(--vc-black)
+    &__btn
+        +fprop(24, 36, 414, 1300, margin-top)
+        display: flex
+        @media(max-width: 767px)
+            display: none
+    &__stats
+        +fprop(32, 72, 414, 1300, margin-top)
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        +fprop(12, 32, 414, 1300, grid-gap)
+    &__stat
+        border-radius: 12px
+        background-color: rgba(255, 255, 255, 0.60)
+        +fprop(12, 16, 414, 1300, padding-top)
+        padding-right: 8px
+        +fprop(12, 16, 414, 1300, padding-bottom)
+        padding-left: 8px
+        display: flex
+        flex-direction: column
+        align-items: center
+    &__stat-icon
+        opacity: 0.8
+        flex-shrink: 0
+        svg
+            display: block
+            height: 24px
+            width: auto
+    &__stat-title
+        text-align: center
+        flex-grow: 1
+        font-size: 12px
+        font-style: normal
+        font-weight: 400
+        opacity: 0.8
+        line-height: 1.2
+        color: var(--vc-black)
+        margin-top: 8px
+    &__stat-text
+        +fprop(20, 24, 414, 1300)
+        font-style: normal
+        font-weight: 500
+        line-height: 1
+        color: var(--vc-primary)
+        margin-top: 12px
+    &__image
+        position: relative
+        max-width: 560px
+        width: 100%
+        @media(max-width: 767px)
+            max-width: unset
+    &__image-bg
+        position: absolute
+        top: 50%
+        left: 0
+        transform: translateY(-50%)
+    &__image-bg-img
+        max-width: 560px
+        width: 100%
+        @media(max-width: 767px)
+            max-width: unset
+    &__image-fg
+        position: relative
+    &__image-fg-img
+        display: block
+        max-width: 560px
+        width: 100%

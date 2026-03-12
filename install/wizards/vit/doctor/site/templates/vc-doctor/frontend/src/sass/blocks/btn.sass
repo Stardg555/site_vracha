@@ -1,0 +1,351 @@
+.vc-btn
+  .vc-main-about__btns &
+    height: 48px
+  display: flex
+  position: relative
+  align-items: center
+  justify-content: center
+  padding: 11px 26px 10px 26px
+  +fprop(44, 48, 414, 1300, height)
+  background-color: var(--vc-primary)
+  //border: 1.5px solid var(--vc-primary)
+  border-radius: 8px
+  font-size: 14px
+  font-weight: 500
+  font-style: normal
+  line-height: 1
+  text-decoration: none
+  color: var(--vc-white)
+  white-space: nowrap
+  cursor: pointer
+  transition: 0.3s
+  &[disabled]
+    opacity: 0.2
+    cursor: not-allowed
+  &:before
+    position: absolute
+    top: 0
+    overflow: hidden
+    border-radius: inherit
+    left: 0
+    content: ''
+    z-index: 5
+    width: 100%
+    height: 100%
+    background-color: var(--vc-white)
+    opacity: 0
+    transition: 0.3s
+  .vc-body--bow &
+    color: var(--vc-white)
+    border: 1.5px solid var(--vc-white)
+    background-color: var(--vc-black)
+    svg path
+      stroke: var(--vc-white)
+  .vc-body--wob &
+    color: var(--vc-black)
+    border: 1.5px solid var(--vc-black)
+    background-color: var(--vc-white)
+    svg path
+      stroke: var(--vc-black)
+  .vc-body--yob &
+    color: var(--vc-blue-dark)
+    border: 1.5px solid var(--vc-blue-dark)
+    background-color: var(--vc-yellow)
+    svg path
+      stroke: var(--vc-blue-dark)
+  &:visited
+    color: var(--vc-white)
+    text-decoration: none
+    &:before
+      opacity: 0.2
+    .vc-body--bow &
+      color: var(--vc-white)
+      border: 1.5px solid var(--vc-white)
+      background-color: var(--vc-black)
+      svg path
+        stroke: var(--vc-white)
+    .vc-body--wob &
+      color: var(--vc-black)
+      border: 1.5px solid var(--vc-black)
+      background-color: var(--vc-white)
+      svg path
+        stroke: var(--vc-black)
+    .vc-body--yob &
+      color: var(--vc-blue-dark)
+      border: 1.5px solid var(--vc-blue-dark)
+      background-color: var(--vc-yellow)
+      svg path
+        stroke: var(--vc-blue-dark)
+  &:hover
+    //background-color: var(--vc-primary-light)
+    //border-color: var(--vc-primary-light)
+    //color: var(--vc-white)
+    &:before
+      opacity: 0.2
+    text-decoration: none
+    .vc-body--bow &
+      color: var(--vc-black)
+      border-color: var(--vc-black)
+      background-color: var(--vc-white)
+      svg path
+        stroke: var(--vc-black)
+    .vc-body--wob &
+      color: var(--vc-white)
+      border-color: var(--vc-white)
+      background-color: var(--vc-black)
+      svg path
+        stroke: var(--vc-white)
+    .vc-body--yob &
+      color: var(--vc-yellow)
+      border-color: var(--vc-yellow)
+      background-color: var(--vc-blue-dark)
+      svg path
+        stroke: var(--vc-yellow)
+  &:focus
+    background-color: var(--vc-primary-light)
+    border-color: var(--vc-primary-light)
+    color: var(--vc-white)
+    text-decoration: none
+    .vc-body--bow &
+      color: var(--vc-black)
+      border-color: var(--vc-black)
+      background-color: var(--vc-white)
+      svg path
+        stroke: var(--vc-black)
+    .vc-body--wob &
+      color: var(--vc-white)
+      border-color: var(--vc-white)
+      background-color: var(--vc-black)
+      svg path
+        stroke: var(--vc-white)
+    .vc-body--yob &
+      color: var(--vc-yellow)
+      border-color: var(--vc-yellow)
+      background-color: var(--vc-blue-dark)
+      svg path
+        stroke: var(--vc-yellow)
+  &:active
+    color: var(--vc-white)
+    text-decoration: none
+    &:before
+      opacity: 0.2
+    .vc-body--bow &
+      color: var(--vc-black)
+      border-color: var(--vc-black)
+      background-color: var(--vc-white)
+      svg path
+        stroke: var(--vc-black)
+    .vc-body--wob &
+      color: var(--vc-white)
+      border-color: var(--vc-white)
+      background-color: var(--vc-black)
+      svg path
+        stroke: var(--vc-white)
+    .vc-body--yob &
+      color: var(--vc-yellow)
+      border-color: var(--vc-yellow)
+      background-color: var(--vc-blue-dark)
+      svg path
+        stroke: var(--vc-yellow)
+  &:focus-visible
+    outline: none
+  svg
+    display: block
+    margin-right: 6px
+    //transform: translateY(-2px)
+    path
+      stroke: var(--vc-white)
+      transition: 0.3s
+  &.vc-btn--transparent
+    color: var(--vc-primary)
+    background-color: var(--vc-transparent)
+    border-color: var(--vc-primary)
+    border: 1.5px solid var(--vc-primary)
+    svg path
+      stroke: var(--vc-primary)
+    .vc-body--bow &
+      color: var(--vc-black)
+      border-color: var(--vc-black)
+      background-color: var(--vc-white)
+      svg path
+        stroke: var(--vc-black)
+    .vc-body--wob &
+      color: var(--vc-white)
+      border-color: var(--vc-white)
+      background-color: var(--vc-black)
+      svg path
+        stroke: var(--vc-white)
+    .vc-body--yob &
+      color: var(--vc-yellow)
+      border-color: var(--vc-yellow)
+      background-color: var(--vc-blue-dark)
+      svg path
+        stroke: var(--vc-yellow)
+    &:visited
+      color: var(--vc-primary)
+      background-color: var(--vc-transparent)
+      svg path
+        stroke: var(--vc-primary)
+      .vc-body--bow &
+        color: var(--vc-black)
+        border-color: var(--vc-black)
+        background-color: var(--vc-white)
+        svg path
+          stroke: var(--vc-black)
+      .vc-body--wob &
+        color: var(--vc-white)
+        border-color: var(--vc-white)
+        background-color: var(--vc-black)
+        svg path
+          stroke: var(--vc-white)
+      .vc-body--yob &
+        color: var(--vc-yellow)
+        border-color: var(--vc-yellow)
+        background-color: var(--vc-blue-dark)
+        svg path
+          stroke: var(--vc-yellow)
+    &:hover
+      color: var(--vc-white)
+      background-color: var(--vc-primary)
+      &:before
+        opacity: 0
+      svg path
+        stroke: var(--vc-white)
+      .vc-body--bow &
+        color: var(--vc-white)
+        border-color: var(--vc-white)
+        background-color: var(--vc-black)
+        svg path
+          stroke: var(--vc-white)
+      .vc-body--wob &
+        color: var(--vc-black)
+        border-color: var(--vc-black)
+        background-color: var(--vc-white)
+        svg path
+          stroke: var(--vc-black)
+      .vc-body--yob &
+        color: var(--vc-blue-dark)
+        border-color: var(--vc-blue-dark)
+        background-color: var(--vc-yellow)
+        svg path
+          stroke: var(--vc-blue-dark)
+    &:focus
+      color: var(--vc-white)
+      background-color: var(--vc-primary)
+      svg path
+        stroke: var(--vc-white)
+      .vc-body--bow &
+        color: var(--vc-white)
+        border-color: var(--vc-white)
+        background-color: var(--vc-black)
+        svg path
+          stroke: var(--vc-white)
+      .vc-body--wob &
+        color: var(--vc-black)
+        border-color: var(--vc-black)
+        background-color: var(--vc-white)
+        svg path
+          stroke: var(--vc-black)
+      .vc-body--yob &
+        color: var(--vc-blue-dark)
+        border-color: var(--vc-blue-dark)
+        background-color: var(--vc-yellow)
+        svg path
+          stroke: var(--vc-blue-dark)
+    &:active
+      color: var(--vc-white)
+      background-color: var(--vc-primary)
+      svg path
+        stroke: var(--vc-white)
+      .vc-body--bow &
+        color: var(--vc-white)
+        border-color: var(--vc-white)
+        background-color: var(--vc-black)
+        svg path
+          stroke: var(--vc-white)
+      .vc-body--wob &
+        color: var(--vc-black)
+        border-color: var(--vc-black)
+        background-color: var(--vc-white)
+        svg path
+          stroke: var(--vc-black)
+      .vc-body--yob &
+        color: var(--vc-blue-dark)
+        border-color: var(--vc-blue-dark)
+        background-color: var(--vc-yellow)
+        svg path
+          stroke: var(--vc-blue-dark)
+    &.vc-btn--black
+      border-color: var(--vc-black)
+      color: var(--vc-black)
+      &:hover
+        border-color: var(--vc-primary)
+        color: var(--vc-white)
+      .vc-body--bow &
+        color: var(--vc-black)
+        background: var(--vc-white)
+      .vc-body--wob &
+        color: var(--vc-white)
+        border-color: var(--vc-white)
+      .vc-body--yob &
+        color: var(--vc-yellow)
+        background: var(--vc-blue-dark)
+        border-color: var(--vc-yellow)
+  &--gray
+    background-color: #F5F6FA
+    color: var(--vc-black)
+    .vc-body--bow &
+      color: var(--vc-black)
+      background: var(--vc-white)
+      border: 1px solid var(--vc-black)
+    .vc-body--wob &
+      color: var(--vc-white)
+      border-color: var(--vc-white)
+      border: 1px solid var(--vc-white)
+    .vc-body--yob &
+      color: var(--vc-yellow)
+      background: var(--vc-blue-dark)
+      border-color: var(--vc-yellow)
+  &--white
+    background-color: var(--vc-white)
+    color: var(--vc-primary)
+    border: 1px solid var(--vc-white)
+    text-decoration: none
+    position: relative
+    svg
+      path
+        stroke: var(--vc-primary)
+    &:before
+      position: absolute
+      top: 0
+      overflow: hidden
+      border-radius: inherit
+      opacity: 1
+      left: 0
+      content: ''
+      z-index: -1
+      width: 100%
+      height: 100%
+      background-color: var(--vc-white)
+      transition: 0.3s
+    &:focus
+      background: rgba(255, 255, 255, 0.85)
+      color: var(--vc-primary)
+      border-color: var(--vc-white)
+      //opacity: 0.85
+    &:visited
+      background: rgba(255, 255, 255, 0.85)
+      color: var(--vc-primary)
+      border-color: var(--vc-white)
+      //opacity: 0.85
+      //&:before
+        opacity: 0.2
+    &:hover
+      background: rgba(255, 255, 255, 0.85)
+      color: var(--vc-primary)
+      border-color: var(--vc-white)
+      //opacity: 0.85
+      //&:before
+        opacity: 0.85
+
+

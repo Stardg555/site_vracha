@@ -1,0 +1,48 @@
+$footerBreakPoint: 767px
+
+.vc-footer
+    background-color: #f5f6fa
+    &__wrapper
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding: 23px 0
+        @media(max-width: $footerBreakPoint)
+            flex-direction: column
+            justify-content: flex-start
+            padding: 32px 0 92px
+    &__copy
+        font-size: 13px
+        font-style: normal
+        font-weight: 400
+        line-height: normal
+        color: #788d98
+    &__vit
+        display: flex
+        transition: 0.3s
+        stop
+            transition: 0.3s
+        &:hover
+            .vc-footer__vit-first-gradient
+                opacity: 1
+            .vc-footer__vit-text
+                opacity: 1
+                path
+                    fill: var(--vc-black)
+            svg
+                path
+                    opacity: 1
+                display: inline-block
+                .vc-footer__vit-first-gradient ~ defs
+                    stop:first-child
+                        stop-color: var(--vc-primary)
+                    stop:last-child
+                        stop-color: #A32EF0
+                .vc-footer__vit-second-gradient ~ defs
+                    stop:first-child
+                        stop-color: #2AF399
+                    stop:last-child
+                        stop-color: #2AF399
+                        stop-opacity: 0
+        @media(max-width: $footerBreakPoint)
+            margin-top: 36px

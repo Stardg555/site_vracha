@@ -1,0 +1,545 @@
+.vc-main-about
+    overflow: hidden
+    position: relative
+    &__title
+        +fprop(24, 32, 414, 1300)
+        font-style: normal
+        font-weight: 400
+        line-height: 1.4
+        color: var(--vc-black)
+        +fprop(16, 18, 414, 1300, margin-top)
+    &__promo-wrapper
+        position: relative
+        overflow: hidden
+        margin-top: 0
+        flex-direction: column
+        border-radius: 24px
+        transition: 0.3s
+        &:hover
+            background-color: var(--vc-white)
+        @media(max-width: 1023px)
+            position: static
+            background-color: var(--vc-white)
+    &__block-title
+        height: 30px
+        background-color: var(--vc-white)
+        font-weight: 300
+        display: flex
+        align-items: center
+        justify-content: center
+        color: var(--vc-black)
+        font-size: 12px
+        font-style: normal
+        line-height: normal
+        text-transform: uppercase
+        border-radius: 30px
+        overflow: hidden
+        padding: 8px 12px
+        width: fit-content
+    &__promo-bg
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.00) 100%), #E3E4FF
+    &__promo-bg-img
+        position: relative
+        width: 100%
+        height: 100%
+        @media(max-width: 1023px)
+            display: none
+    &__promo-bg-img-mob
+        width: 100%
+        height: 100%
+        display: none
+        @media(max-width: 1023px)
+            display: block
+    &__promo-bg-mob
+        top: 0
+        position: absolute
+        left: 0
+        width: 100%
+        height: 100%
+        display: none
+        @media(max-width: 1023px)
+            display: block
+    &__content
+        position: relative
+        @media(max-width: 767px)
+            padding-bottom: 92px
+    &__cards
+        +fprop(24, 36, 414, 1300, margin-top)
+    &__info-wrapper
+        flex: 1 1 50%
+        align-items: center
+        display: flex
+        justify-content: space-between
+        @media(max-width: 767px)
+            flex-direction: column
+    &__info
+        height: fit-content
+        max-width: 560px
+        flex: 1 1 50%
+        @media(max-width: 1023px)
+            max-width: unset
+        @media(max-width: 767px)
+            margin-top: 24px
+            margin-right: unset
+            order: 2
+    &__btns
+        +fprop(26, 24, 414, 1300, margin-top)
+        display: flex
+        gap: 12px
+        @media(max-width: 767px)
+            flex-direction: column
+    &__btn
+        border-radius: 100px
+        border: 1px solid var(--vc-primary)
+        +fprop(44, 48, 414, 1300, height)
+        display: flex
+        cursor: pointer
+        align-items: center
+        justify-content: center
+        padding: 0 24px
+        font-size: 14px
+        font-style: normal
+        font-weight: 500
+        line-height: normal
+        color: var(--vc-primary)
+        &--video
+            padding: 0 16px 0 6px
+            background-color: var(--vc-white)
+            border-color: var(--vc-white)
+        @media(max-width: 767px)
+            width: 100%
+    &__btn-title
+        //
+    &__btn-icon
+        margin-right: 10px
+        svg
+            display: block
+            width: 36px
+            height: auto
+    &__image
+        position: relative
+        aspect-ratio: 618 / 360
+        overflow: hidden
+        max-width: 618px
+        flex: 0 1 50%
+        border-radius: 32px
+        @media(max-width: 767px)
+            max-width: unset
+    &__image-img
+        display: block
+        //width: 100%
+        height: 100%
+        object-fit: cover
+        object-position: center
+    &__desc
+        +fprop(14, 16, 414, 1300)
+        +fprop(8, 16, 414, 1300, margin-top)
+        margin-bottom: 16px
+        @media(max-width: 767px)
+            margin-bottom: 0
+        font-style: normal
+        font-weight: 400
+        line-height: 1.5
+        color: #3C3C3B
+    &__logo
+        display: flex
+        gap: 11px
+        align-items: center
+        margin-bottom: 32px
+    &__promo
+        flex: 1 1 auto
+        min-height: 460px
+        padding: 50px
+        z-index: 10
+        position: relative
+        width: 100%
+        @media(max-width: 1023px)
+            min-height: unset
+            order: 2
+            padding: 0
+    &__promo-title
+        font-size: 16px
+        color: var(--vc-black)
+        font-style: normal
+        font-weight: 500
+        line-height: 1.5
+    &__promo-desc
+        margin: 12px 0
+        font-weight: 400
+        +fprop(14, 16, 414, 1300)
+        color: #3C3C3B
+        font-style: normal
+        line-height: 1.62
+    &__promo-cards
+        +fprop(32, 40, 414, 1300, margin-top)
+        +fprop(16, 32, 414, 1300, gap)
+        display: flex
+        position: relative
+        scrollbar-width: none
+        -ms-overflow-style: none
+        @media(max-width: 1023px)
+            flex-direction: column
+        @media(max-width: 767px)
+            max-width: 100%
+    &__promo-card
+        flex-direction: column
+        background: var(--vc-white)
+        min-width: 150px
+        display: flex
+        height: auto
+        justify-content: space-between
+        position: relative
+        border-radius: 24px
+        overflow: hidden
+        padding: 0
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.00) 100%), #CFEBFF
+        &:nth-child(2)
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.00) 100%), #E3E4FF
+        &:nth-child(3)
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.00) 100%), #CFEBFF
+        &:nth-child(4)
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.00) 100%), #D4FCEB
+        @media(max-width: 1023px)
+            max-width: 318px
+    &__promo-card-icon
+        width: 64px
+        height: 64px
+        flex-shrink: 0
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 100px
+    &__promo-card-title
+        text-align: center
+        +fprop(12, 24, 414, 1300, margin-bottom)
+        +fprop(16, 18, 414, 1300)
+        font-style: normal
+        font-weight: 400
+        line-height: 1.2
+        padding: 32px 16px 0
+        color: var(--vc-black)
+    &__promo-card-subtitle
+        margin-top: 4px
+        +fprop(13, 14, 414, 1300)
+        color: var(--vc-black)
+        font-style: normal
+        font-weight: 400
+        line-height: 1.37
+    &__promo-btns
+        +fprop(24, 36, 414, 1300, margin-top)
+        height: 44px
+        display: flex
+        gap: 16px
+        .vc-btn
+            height: 100%
+            position: relative
+            width: fit-content
+            border-radius: 12px
+            text-transform: unset
+            border: unset
+            &:hover
+                background-color: var(--vc-primary)
+                &:before
+                    opacity: 0.2
+            &:before
+                position: absolute
+                top: 0
+                overflow: hidden
+                border-radius: inherit
+                left: 0
+                content: ''
+                z-index: 5
+                width: 100%
+                height: 100%
+                background-color: var(--vc-white)
+                opacity: 0
+                transition: 0.3s
+
+        @media(max-width: 1080px)
+            flex-direction: column
+        @media(max-width: 767px)
+            align-items: center
+            .vc-btn
+                width: 100%
+        @media(max-width: 500px)
+            width: auto
+    &__background
+        position: absolute
+        top: 0
+        right: 0
+        height: 100%
+        aspect-ratio: 761 / 772
+        overflow: hidden
+        max-width: 761px
+        @media(max-width: 767px)
+            aspect-ratio: 390 / 310
+            top: unset
+            height: unset
+            bottom: 0
+    &__background-img
+        display: block
+        width: 100%
+        height: 100%
+        object-fit: cover
+        object-position: center
+        @media(max-width: 767px)
+            display: none
+    &__background-img--mob
+        display: none
+        width: 100%
+        height: 100%
+        object-fit: cover
+        object-position: center
+        @media(max-width: 767px)
+            display: block
+    &__doctor
+        position: absolute
+        max-height: 600px
+        height: 100%
+        z-index: 1
+        bottom: 0
+        right: 70px
+        +fprop(32, 40, 414, 1300, padding-top)
+        @media(max-width: 1023px)
+            height: 600px
+            position: relative
+            right: 0
+        @media(max-width: 767px)
+            height: auto
+    &__doctor-info
+        display: none
+        position: absolute
+        bottom: 0
+        flex-direction: column
+        gap: 8px
+        @media(max-width: 767px)
+            display: flex
+    &__doctor-name
+        color: var(--vc-black)
+        font-size: 15px
+        font-style: normal
+        font-weight: 400
+        line-height: 1.4
+    &__doctor-position
+        color: #1D2622
+        font-size: 11px
+        font-style: normal
+        font-weight: 400
+        line-height: 1.81
+    &__image-img-mob
+        display: none
+        width: 100%
+        height: 100%
+        object-fit: contain
+        object-position: center
+        @media(max-width: 767px)
+            display: block
+    &__block
+        @media(max-width: 1023px)
+            top: 0
+        .vc-section__title
+            padding: 6px 0
+            +fprop(16, 12, 414, 1300, margin-top)
+    &__block-promo-title
+        margin: 12px 0
+        padding: 12px 0
+        @media(max-width: 1023px)
+            padding: 0
+    &__doctor-image
+        height: 100%
+        @media(max-width: 767px)
+            aspect-ratio: 1 / 1
+    &__doctor-img
+        height: 100%
+        @media(max-width: 1023px)
+            display: none
+    &__doctor-img-mob
+        display: none
+        @media(max-width: 1023px)
+            display: block
+            height: 100%
+    &__doctor-content-wrapper
+        position: relative
+        width: 100%
+        height: 100%
+    &__doctor-content
+        display: flex
+        position: absolute
+        max-width: 205px
+        bottom: 190px
+        right: 0
+        flex-direction: column
+        @media(max-width: 1023px)
+            bottom: 28px
+    &__doctor-spec
+        color: var(--vc-black)
+        font-size: 13px
+        margin-top: 4px
+        font-style: normal
+        font-weight: 300
+        line-height: 1.6
+    &__main
+        display: flex
+        align-items: center
+        gap: 33px
+        @media(max-width: 1023px)
+            flex-direction: column-reverse
+    &__slider
+        flex: 1 1 50%
+        max-width: 50%
+        clip-path: polygon(0 0, 100vw 0, 100vw 100%, 0 100%)
+        @media(max-width: 1023px)
+            clip-path: unset
+            max-width: unset
+    &__slider-container
+        height: 100%
+        position: relative
+        margin-left: 32px
+        @media(max-width: 1023px)
+            margin: unset
+    &__card-container
+        overflow: hidden
+        @media(max-width: 1023px)
+            overflow: unset
+    &__slide
+        max-height: 460px
+        height: auto
+    &__slide-img
+        display: block
+        width: 100%
+        height: 100%
+    &__promo-cover
+        position: relative
+    &__promo-card-image
+        max-width: 280px
+        max-height: 280px
+        align-self: center
+    &__promo-card-image-img
+        width: 100%
+        height: 100%
+        max-height: 460px
+    &__links
+        display: flex
+        height: 60px
+        +fprop(16, 32, 414, 1300, padding-right)
+        +fprop(16, 32, 414, 1300, padding-left)
+        width: 100%
+        +fprop(32, 40, 414, 1300, margin-top)
+        overflow: hidden
+        border-radius: 12px
+        align-items: center
+        background-color: #F5F6FA
+    &__link-item
+        &:not(:last-child)
+            +fprop(32, 16, 414, 1300, margin-right)
+        overflow: hidden
+        flex: 1 1 auto
+        display: flex
+        align-items: center
+        justify-content: center
+        border-radius: 12px
+        height: 52px
+        transition: 0.3s
+        min-width: fit-content
+        @media(min-width: 768px)
+            &:hover
+                background-color: var(--vc-white)
+                box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.05)
+    &__pagination
+        display: flex
+        justify-content: center
+    &__nav
+        display: none
+        max-height: 8px
+        margin-top: 16px
+        .swiper-pagination-bullet-active
+            background-color: var(--vc-primary)
+            opacity: 0.5
+        @media(max-width: 1023px)
+            display: block
+    &__nav-arrows
+        position: absolute
+        top: 45%
+        left: 0
+        z-index: 10
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: space-between
+        pointer-events: none
+        transition: 0.3s
+        @media(max-width: 1023px)
+            display: none
+    &__arrow
+        border-radius: 100px
+        border: 4px solid rgba(13, 152, 252, 0.20)
+        background: var(---, #FFF)
+        background-color: var(--vc-white)
+        +fprop(38, 54, 414, 1300, width)
+        +fprop(38, 54, 414, 1300, height)
+        display: flex
+        align-items: center
+        justify-content: center
+        pointer-events: all
+        cursor: pointer
+        transition: 0.3s
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05)
+        &--right
+            transform: translateX(50%)
+        svg
+            display: block
+        &--left
+            transform: translateX(-50%)
+            svg
+                transform: scaleX(-1)
+        &:hover
+            background: #C8C3F5
+    &__promo-items
+        position: relative
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr 1fr
+        padding: 0 50px
+        +fprop(12, 32, 414, 1300, grid-gap)
+        margin-top: 24px
+        +fprop(32, 24, 414, 1300, margin-bottom)
+        z-index: 5
+        @media(max-width: 1023px)
+            grid-template-columns: 1fr 1fr
+            padding: 0
+            margin-top: 0
+    &__promo-item
+        overflow: hidden
+        +fprop(101, 120, 414, 1300, min-height)
+        border-radius: 24px
+        background: rgba(255, 255, 255, 0.60)
+        backdrop-filter: blur(3px)
+        +fprop(18, 24, 414, 1300, padding-right)
+        +fprop(18, 24, 414, 1300, padding-left)
+        display: flex
+        flex-direction: column
+        justify-content: center
+    &__promo-item-title
+        color: var(--vc-primary)
+        +fprop(40, 44, 414, 1300)
+        font-style: normal
+        font-weight: 300
+        line-height: 1.2
+    &__promo-item-text
+        margin-top: 4px
+        color: var(--vc-black)
+        +fprop(14, 15, 414, 1300)
+        font-style: normal
+        font-weight: 400
+        line-height: 1.5

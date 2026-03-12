@@ -1,0 +1,410 @@
+.vc-modal
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 1100
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: rgba(0, 0, 0, 0.8)
+    opacity: 0
+    pointer-events: none
+    transform: scale(1.1)
+    transition: 0.3s
+    &--video
+        .vc-modal__container
+            overflow: unset
+            max-width: 640px
+        .vc-modal__header
+            border-radius: 24px 24px 0 0
+        .vc-modal__content
+            +fprop(340, 480, 414, 1300, min-height)
+            display: flex
+            flex-direction: column
+            iframe
+                flex: 1 1 auto
+    .vc-record-form__submit-wrapper
+        flex-direction: column
+        margin-top: 24px
+        align-items: flex-start
+        +fprop(28, 36, 414, 1300, gap)
+        .vc-btn
+            min-width: 200px
+            @media(max-width: 767px)
+                width: 100%
+    @media(max-width: 767px)
+        padding: 0 16px
+    .vc-record-form
+        .vc-modal[data-name='callbackModal'] &
+            margin-top: 16px
+        .vc-modal[data-name='addReviewModal'] &
+            margin-top: 0
+    &--active
+        opacity: 1
+        transform: scale(1)
+        pointer-events: all
+    .vc-record-form__select, .vc-record-form__input, .vc-record-form__datetime
+        +fprop(44, 50, 414, 1300, height)
+    .vc-record-form__select-header
+        +fprop(42, 48, 414, 1300, height)
+    .vc-record-form__inputs-wrapper
+        .vc-record-form__input, .vc-record-form__select, .vc-record-form__datetime
+            margin: 0
+            width: 50%
+    .vc-record-form__form
+        .vc-record-form__textarea
+            height: 128px
+            margin-bottom: 0
+    &__video
+        width: 100%
+    &__inputs
+        display: flex
+        flex-direction: column
+        width: 100%
+        +fprop(12, 16, 414, 1300, gap)
+    &__header
+        display: flex
+        flex-direction: column
+        background: #cfebff
+        +fprop(18, 24, 414, 1300, padding-top)
+        +fprop(12, 12, 414, 1300, padding-right)
+        +fprop(18, 24, 414, 1300, padding-bottom)
+        +fprop(16, 24, 414, 1300, padding-left)
+    &__content
+        +fprop(16, 24, 414, 1300, padding-top)
+        +fprop(16, 24, 414, 1300, padding-right)
+        +fprop(24, 32, 414, 1300, padding-bottom)
+        +fprop(16, 24, 414, 1300, padding-left)
+    &__success-close
+        flex-shrink: 0
+        cursor: pointer
+        margin-left: 10px
+        display: flex
+        +fprop(28, 24, 414, 1300, width)
+        +fprop(28, 24, 414, 1300, height)
+        justify-content: center
+        align-items: center
+        z-index: 100
+        margin-top: 7.5px
+        @media(max-width: 767px)
+            margin-top: 0
+    &__container
+        .vc-record-form__inputs-wrapper
+            +fprop(8, 16, 414, 1300, gap)
+        &:has(.vc-modal__success)
+            +fprop(280, 348, 414, 1300, min-height)
+            .vc-modal__close-wrapper
+                display: none
+            .vc-modal__inputs, .vc-record-form__input, .vc-record-form__select, .vc-record-form__submit-wrapper, .vc-record-form__datetime
+                display: none
+        position: relative
+        background-color: var(--vc-white)
+        overflow-y: auto
+        width: 100%
+        max-width: 540px
+        max-height: 100dvh
+        max-height: 100vh
+        scrollbar-width: none
+        border-radius: 24px
+        padding-bottom: env(safe-area-inset-bottom)
+        -ms-overflow-style: none
+        &::-webkit-scrollbar
+            width: 0 !important
+        .vc-modal--review &
+            max-width: 540px
+        .vc-modal--addreview &
+            max-width: 758px
+            +fprop(24, 56, 414, 1300, padding)
+        .vc-modal--mh300 &
+            min-height: 300px
+        .vc-modal--p0 &
+            padding: 0
+        .vc-modal--white &
+            background-color: var(--vc-white)
+    &__close-wrapper
+        flex-shrink: 0
+        margin-left: 8px
+        display: flex
+        +fprop(28, 24, 414, 1300, width)
+        +fprop(28, 24, 414, 1300, height)
+        justify-content: center
+        align-items: center
+        z-index: 100
+        &--abs
+            position: absolute
+            top: 16px
+            right: 16px
+    &__close
+        cursor: pointer
+        transition: 0.3s
+        svg
+            display: block
+        &:hover
+            opacity: 1
+    &__title-wrapper
+        display: flex
+        align-items: center
+        justify-content: space-between
+    &__title
+        +fprop(22, 28, 414, 1300)
+        font-weight: 500
+        flex-grow: 1
+        font-style: normal
+        line-height: 1.2
+        color: var(--vc-black)
+        padding-bottom: 0
+    &__subtitle
+        font-size: 14px
+        font-weight: 400
+        font-style: normal
+        line-height: 18px
+        color: var(--vc-black)
+        margin-top: 8px
+        .vc-modal--small &
+            color: var(--vc-black)
+            font-size: 16px
+            font-style: normal
+            font-weight: 400
+            line-height: 1.5
+    &__star
+        display: flex
+        width: 48px
+        height: 48px
+        padding: 13px
+        justify-content: center
+        align-items: center
+        border-radius: 12px
+        background: var(--vc-white)
+    &__success
+        @extend .vc-modal__container
+        align-items: center
+        max-width: 540px
+        position: absolute
+        display: flex
+        flex-direction: column
+        top: 0
+        left: 0
+        z-index: 50
+        width: 100%
+        height: 100%
+    &__success-header
+        padding-right: 12px
+        min-height: fit-content
+        width: 100%
+        display: flex
+        flex-grow: 1
+        justify-content: space-between
+        background: #cfebff
+        +fprop(18, 24, 414, 1300, padding-top)
+        +fprop(18, 24, 414, 1300, padding-bottom)
+        +fprop(16, 24, 414, 1300, padding-left)
+        overflow: hidden
+        .vc-modal__close
+            margin-left: auto
+    &__success-main
+        display: flex
+        width: 100%
+        align-items: center
+        min-height: 140px
+        +fprop(16, 24, 414, 1300, padding-top)
+        +fprop(16, 24, 414, 1300, padding-right)
+        +fprop(16, 24, 414, 1300, padding-bottom)
+        +fprop(16, 24, 414, 1300, padding-left)
+        @media(max-width: 767px)
+            min-height: 120px
+    &__success-footer
+        padding-top: 12px
+        width: 100%
+        flex-grow: 1
+        +fprop(16, 24, 414, 1300, padding-right)
+        +fprop(24, 32, 414, 1300, padding-bottom)
+        +fprop(16, 24, 414, 1300, padding-left)
+        display: flex
+        align-items: end
+        .vc-btn
+            width: 200px
+            @media(max-width: 767px)
+                width: 100%
+    &__success-icon
+        +fprop(40, 80, 414, 1300, width)
+        +fprop(40, 80, 414, 1300, height)
+        display: flex
+        svg
+            display: block
+            width: 100%
+            height: 100%
+    &__success-title
+        @extend .vc-modal__title
+        padding-bottom: 0
+    &__success-subtitle
+        color: var(--vc-black)
+        +fprop(14, 16, 414, 1300)
+        font-style: normal
+        font-weight: 400
+        line-height: 1.4
+        margin: 0
+        padding: 0
+    &__success-btn
+        width: 128px
+        margin-top: 32px
+        position: static
+        @media(max-width: 767px)
+            width: 100%
+    &__success--job
+        +fprop(20, 40, 414, 1300, padding-top)
+        +fprop(10, 20, 414, 1300, padding-right)
+        +fprop(20, 40, 414, 1300, padding-bottom)
+        +fprop(16, 32, 414, 1300, padding-left)
+        display: flex
+        flex-direction: column
+        align-items: center
+        max-width: 540px
+        .vc-modal__success-title
+            @extend .vc-modal__title
+            text-align: center
+            padding-bottom: 0
+            margin: 10px 0
+        .vc-modal__success-subtitle
+            text-align: center
+            margin: 0
+            padding: 0
+        .vc-modal__success-icon
+            +fprop(40, 80, 414, 1300, width)
+            +fprop(40, 80, 414, 1300, height)
+    &__review-top
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__review-top-title
+        color: var(--vc-black)
+        +fprop(24, 28, 414, 1300)
+        font-style: normal
+        font-weight: 500
+        line-height: 1.4
+    &__review-text
+        +fprop(14, 18, 414, 1300)
+        +fprop(20, 40, 414, 1300, margin-top)
+        font-weight: 400
+        font-style: normal
+        line-height: 1.56
+        color: var(--vc-black)
+    &__review-body
+        .vc-reviews__item-stars
+            +fprop(8, 12, 414, 1300, padding-top)
+            +fprop(8, 12, 414, 1300, padding-bottom)
+    &__review-btn
+        display: flex
+        +fprop(20, 30, 414, 1300, margin-top)
+        justify-content: center
+    &__review-date
+        color: #8E959B
+        font-size: 14px
+        font-style: normal
+        font-weight: 400
+        line-height: 1.42
+    &__review-stars
+        +fprop(10, 20, 414, 1300, margin-top)
+    &__review-title
+        @extend .vc-modal__title
+        padding-bottom: 0
+        flex-grow: 0
+        +fprop(10, 20, 414, 1300, margin-bottom)
+    &--review
+        .vc-modal__close-wrapper
+            margin-left: 8px
+            flex-shrink: 0
+        .vc-modal__close
+            svg, path
+                stroke: var(--vc-black)
+        .vc-modal__container
+            max-height: 80vh
+            overflow-y: auto
+    &--review[data-name="addReviewModal"]
+        .vc-modal__container
+            max-height: 90vh
+    &__review-header-wrapper
+        display: flex
+        flex-wrap: nowrap
+        +fprop(16, 20, 414, 1300, gap)
+        &:has(.vc-modal__review-doc)
+            .vc-modal__review-header
+                flex-grow: 1
+                flex-direction: column
+                align-items: flex-end
+            .vc-modal__review-info
+                display: flex
+                margin-top: 8px
+                @media(max-width: 767px)
+                    flex-direction: column
+            .vc-modal__review-title
+                margin: 0
+            .vc-modal__review-date
+                margin: 0 0 0 8px
+                @media(max-width: 767px)
+                    margin: 8px 0 0 0
+        @media(max-width: 767px)
+            flex-wrap: wrap
+    &__review-info
+        display: flex
+    &__review-image
+        aspect-ratio: 88 / 88
+        border-radius: 100px
+        overflow: hidden
+        flex-shrink: 0
+        +fprop(72, 88, 414, 1300, min-height)
+        position: relative
+        display: block
+    &__review-image-img
+        position: absolute
+        width: 100%
+        height: 100%
+        object-position: center
+        object-fit: cover
+    &__review-header
+        display: flex
+        align-items: center
+        justify-content: space-between
+        width: 100%
+    &__btns
+        display: flex
+        margin-top: 24px
+    &__review-doc
+        margin-left: 12px
+        display: flex
+        padding-right: 12px
+        padding-left: 12px
+        +fprop(12, 8, 414, 1300, padding-top)
+        +fprop(12, 8, 414, 1300, padding-bottom)
+        background-color: var(--vc-white)
+        border-radius: 8px
+        @media(max-width: 767px)
+            flex-basis: 100%
+            margin-left: 0
+    &__review-doc-content
+        display: flex
+        flex-direction: column
+    &__review-doc-title
+        color: var(--vc-black)
+        font-size: 13px
+        font-style: normal
+        font-weight: 500
+        line-height: 1.2
+    &__review-doc-subtitle
+        color: #788D98
+        margin-top: 4px
+        font-size: 12px
+        font-style: normal
+        font-weight: 400
+        line-height: 1.5
+    &__review-doc-image
+        overflow: hidden
+        border-radius: 8px
+        +fprop(36, 48, 414, 1300, width)
+        +fprop(36, 48, 414, 1300, height)
+        +fprop(8, 12, 414, 1300, margin-right)
+    &__review-doc-image-img
+        display: block
+        width: 100%
+        height: 100%
